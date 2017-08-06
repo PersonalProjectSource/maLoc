@@ -1,4 +1,6 @@
 WiseInvestor
 ============
 
-A Symfony project created on July 19, 2017, 4:53 pm.
+It is my personal project.
+Work in progress…
+

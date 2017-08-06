@@ -43,8 +43,7 @@ class DefaultController extends FOSRestController
         $em = $this->getDoctrine()->getManager();
         $bails = $em->getRepository(Bail::class)->findAll();
         $view = View::create();
-        $data = ['bails' => $bails];
-        $view->setData($data);
+        $view->setData($bails);
         // Define stream format, but is json by default.
         $view->setFormat('json');
 

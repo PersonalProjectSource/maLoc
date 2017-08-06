@@ -1,0 +1,3 @@
+wise_core_homepage:
+    path:     /
+    defaults: { _controller: WiseCoreBundle:Default:index }

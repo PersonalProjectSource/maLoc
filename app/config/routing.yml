@@ -1,0 +1,20 @@
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+
+wise_api:
+    resource: "@WiseApiBundle/Controller/"
+    type:     rest
+    prefix:   /
+
+wise_bo:
+    resource: "@WiseBoBundle/Resources/config/routing.xml"
+    prefix:   /bo
+
+wise_core:
+    resource: "@WiseCoreBundle/Resources/config/routing.yml"
+    prefix:   /core
+
+#app:
+#    resource: '@AppBundle/Controller/'
+#    type: annotation

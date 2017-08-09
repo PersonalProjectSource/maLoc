@@ -50,14 +50,14 @@ class Bail
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_debut", type="datetime")
+     * @ORM\Column(name="date_debut", type="datetime", nullable=true)
      */
     private $dateDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_bail_ended", type="datetime")
+     * @ORM\Column(name="date_bail_ended", type="datetime", nullable=true)
      */
     private $dateBailEnded;
 

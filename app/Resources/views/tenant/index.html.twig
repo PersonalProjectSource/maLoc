@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tenants list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Pseudo</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tenant in tenants %}
+            <tr>
+                <td><a href="{{ path('tenant_show', { 'id': tenant.id }) }}">{{ tenant.id }}</a></td>
+                <td>{{ tenant.nom }}</td>
+                <td>{{ tenant.prenom }}</td>
+                <td>{{ tenant.pseudo }}</td>
+                <td>{{ tenant.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tenant_show', { 'id': tenant.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tenant_edit', { 'id': tenant.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tenant_new') }}">Create a new tenant</a>
+        </li>
+    </ul>
+{% endblock %}

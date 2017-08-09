@@ -16,30 +16,22 @@
         </script>
     </head>
     <body ng-controller="myCtrl">
-    {% verbatim %}
-    <div>
-        <label>Name:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter a name here">
-        <hr>
-        <table class="table">
-            <th>identifiant</th>
-            <th>Loyer</th>
-            <th>Caution</th>
-            <th>actif</th>
-            <tr ng-repeat="bail in bails">
-                <td>{{ bail.id }}</td>
-                <td>{{ bail.loyer }}</td>
-                <td>{{ bail.caution }}</td>
-                <td>{{ bail.actif }}</td>
-            </tr>
-        </table>
-    </div>
-    <div  >
-
-        <p>Today's welcome message is:</p>
-        <h1>{{myWelcome}}</h1>
-
-    </div>
-    {% endverbatim %}
+        {% verbatim %}
+        <div class="container">
+            <table class="table">
+                <caption class="alert">Un super titre</caption>
+                <th>Identifiant</th>
+                <th>Loyer</th>
+                <th>Caution</th>
+                <th>actif</th>
+                <tr ng-repeat="bail in bails">
+                    <td>{{ bail.id }}</td>
+                    <td>{{ bail.loyer }}</td>
+                    <td>{{ bail.caution }}</td>
+                    <td>{{ bail.actif }}</td>
+                </tr>
+            </table>
+        </div>
+        {% endverbatim %}
     </body>
 </html>

@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('WiseCoreBundle:Default:index.html.twig');
+        return $this->render('WiseCoreBundle:Default:baux_list.html.twig');
     }
 }

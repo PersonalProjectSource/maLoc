@@ -18,32 +18,21 @@ use Wise\CoreBundle\Entity\Bail;
  */
 class DefaultController extends FOSRestController
 {
-    public function test() {
-        dump('voici le test');
-    }
-
     /**
-     * Return bails list.
+     * Return data home page.
+     *
      * @param Request $request
-     * @Rest\Get("/", name="app_api_bail_list", options={"expose"=true})
-     * @return View
+     * @Rest\Get("/homepage", name="app_api_homepage", options={"expose"=true})
      *
      * @Doc\ApiDoc(
-     *      section="Bail",
-     *      description="Show bails list",
-     *      statusCodes={
-     *          200="Returned if bail has been displayed",
-     *          422="Returned if list has not been displayed",
-     *          500="Returned if server error"
-     *      }
+     *      section="Homepage",
+     *      description="Show data homepage",
      * )
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $bails = $em->getRepository(Bail::class)->findAll();
         $view = View::create();
-        $view->setData($bails);
+        $view->setData(['homepage' => 'here data homepage']);
         // Define stream format, but is json by default.
         $view->setFormat('json');
 

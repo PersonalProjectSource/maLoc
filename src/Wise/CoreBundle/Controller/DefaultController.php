@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('WiseCoreBundle:Default:baux_list.html.twig');
     }
+
+    public function homepageAction()
+    {
+        return $this->render('@WiseCore/Default/homepage.html.twig');
+    }
 }

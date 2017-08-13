@@ -1,0 +1,19 @@
+<html ng-app="homepage">
+    <head>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <script src="{{ asset('js/angular.js') }}"></script>
+        <script src="{{ asset('js/Controllers/homepage.js') }}"></script>
+    </head>
+    <body ng-controller="myCtrl">
+        {% verbatim %}
+            <h1>Bienvenue sur la homepage</h1>
+            <div class="menu" ng-controller="MenuCtrl">
+                <ul>
+                    <li ng-repeat="item in menu"><a href="{{ item.link }}">{{ item.label }}</a></li>
+                </ul>
+            </div>
+            <div class="wrapper" ng-repeat="item in homepage"><strong ng-repeat="content in item">{{ content.nom }}<br></strong><i> Angular Script</i></div>
+            <div class="footer" ng-controller="MenuCtrl">{{ pacman }} Ici le footer</div>
+        {% endverbatim %}
+    </body>
+</html>

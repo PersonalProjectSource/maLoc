@@ -13,7 +13,7 @@ wise_bo:
 
 wise_core:
     resource: "@WiseCoreBundle/Resources/config/routing.yml"
-    prefix:   /core
+    prefix:   /
 
 #app:
 #    resource: '@AppBundle/Controller/'

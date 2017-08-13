@@ -1,3 +1,7 @@
+wise_core_homepage2:
+    path:     /bail/
+    defaults: { _controller: WiseCoreBundle:Default:index }
+
 wise_core_homepage:
     path:     /
-    defaults: { _controller: WiseCoreBundle:Default:index }
+    defaults: { _controller: WiseCoreBundle:Default:homepage }

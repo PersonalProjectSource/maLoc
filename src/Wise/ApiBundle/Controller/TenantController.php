@@ -2,6 +2,7 @@
 
 namespace Wise\ApiBundle\Controller;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Wise\CoreBundle\Entity\Tenant;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -50,56 +51,56 @@ class TenantController extends FOSRestController
             $em = $this->getDoctrine()->getManager();
             $em->persist($tenant);
             $em->flush();
-
-            //return $this->redirectToRoute('tenant_show', array('id' => $tenant->getId()));
         }
 
-        //return $this->render('tenant/new.html.twig', array(
-        //    'tenant' => $tenant,
-        //    'form' => $form->createView(),
-        //));
-        return;
+        $view = View::create();
+        $view->setData(['message' => 'Le locataire a été ajouté avec succes']);
+        $view->setFormat('json');
+
+        return $this->handleView($view);
     }
 
     /**
      * Finds and displays a tenant entity.
      *
-     * @Route("/{id}", name="tenant_show")
-     * @Method("GET")
+     * @Rest\Get("/tenant/{tenantId}", name="tenant_show")
      */
-    public function showAction(Tenant $tenant)
+    public function showAction($tenantId)
     {
-        $deleteForm = $this->createDeleteForm($tenant);
+        $repository = $this->getDoctrine()->getManager()->getRepository(Tenant::class);
+        $tenant = $repository->find($tenantId); // TODO faire une gestion d'exception si pas trouver.
+        $view = View::create();
+        $view->setData(['tenant' => $tenant]);
+        $view->setFormat('json');
 
-        return $this->render('tenant/show.html.twig', array(
-            'tenant' => $tenant,
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->handleView($view);
     }
 
     /**
      * Displays a form to edit an existing tenant entity.
      *
-     * @Route("/{id}/edit", name="tenant_edit")
-     * @Method({"GET", "POST"})
+     * @Rest\Post("/tenant/{tenantId}/edit", name="tenant_edit")
      */
-    public function editAction(Request $request, Tenant $tenant)
+    public function editAction(Request $request, $tenantId)
     {
-        $deleteForm = $this->createDeleteForm($tenant);
-        $editForm = $this->createForm('Wise\CoreBundle\Form\TenantType', $tenant);
-        $editForm->handleRequest($request);
-
+        $em = $this->getDoctrine()->getManager();
+        $tenant = $this->getDoctrine()->getManager()->getRepository(Tenant::class)->find($tenantId);
+        $editForm = $this->createForm('Wise\CoreBundle\Form\TenantType', $tenant, ['csrf_protection' => false]);
+        /** @var array $dataFromRequest */
+        $dataFromRequest = $request->request->all();
+        $editForm->submit($dataFromRequest);
+        // TODO Ameliorer avec le deport de certaines ligne de code dans le Handler.
+        // TODO pourquoi lorsqu'on hydrate les enfants, les parents ne sont pas hydraté automatiquement.
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('tenant_edit', array('id' => $tenant->getId()));
+            $em->persist($tenant);
+            $em->flush();
         }
+        // View creation for Json stream.
+        $view = View::create();
+        $view->setData(['tenant' => $tenant, $editForm->getName() => $editForm->getData(), 'formsErrors' => $editForm->getErrors()->current()] );
+        $view->setFormat('json');
 
-        return $this->render('tenant/edit.html.twig', array(
-            'tenant' => $tenant,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->handleView($view);
     }
 
     /**

@@ -27,7 +27,6 @@ class BailController extends FOSRestController
      * Lists all bail entities.
      *
      * @Rest\Get("/bail/list", name="app_api_bail_list")
-     * @Rest\Get("/", name="app_api_bail_list_bis")
      *
      * @Doc\ApiDoc(
      *      section="Bail",
@@ -51,21 +50,19 @@ class BailController extends FOSRestController
     }
 
     /**
- * Creates a new bail entity.
- *
- * @Rest\Post("/bail/new", name="app_api_bail_new")
- * @Doc\ApiDoc(
- *      section="Bail",
- *      description="Show bails list",
- *      statusCodes={
- *          200="Returned if bail has been displayed",
- *          422="Returned if list has not been displayed",
- *          500="Returned if server error"
- *      }
- *
- *
- * )
- */
+     * Creates a new bail entity.
+     *
+     * @Rest\Post("/bail/new", name="app_api_bail_new")
+     * @Doc\ApiDoc(
+     *      section="Bail",
+     *      description="Show bails list",
+     *      statusCodes={
+     *          200="Returned if bail has been displayed",
+     *          422="Returned if list has not been displayed",
+     *          500="Returned if server error"
+     *      }
+     * )
+     */
     public function newAction(Request $request)
     {
         $bail = new Bail();
@@ -74,12 +71,12 @@ class BailController extends FOSRestController
         //dump($request, $form->getData(), $bail);die;
         $view = View::create();
         $view->setFormat('json');
-        // Is valid n'acceptait pas la soumission car il a fallut modifier un peu le formulaire.
+        // Is valid n'acceptait pas la soumission car il a fallu modifier un peu le formulaire.
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($bail);
             $em->flush();
-            $view->setData(['message' => "Le bail a bien été enregistré"]);
+            $view->setData(['message' => "Le bail a bien été enregistré"]); // TODO faire la gestion des traductions.
 
             return $this->handleView($view);
         }

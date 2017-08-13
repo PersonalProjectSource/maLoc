@@ -9,6 +9,7 @@ use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation as Doc;
 use FOS\RestBundle\View\View;
 use Wise\CoreBundle\Entity\Bail;
+use Wise\CoreBundle\Entity\Tenant;
 
 
 /**
@@ -22,7 +23,7 @@ class DefaultController extends FOSRestController
      * Return data home page.
      *
      * @param Request $request
-     * @Rest\Get("/homepage", name="app_api_homepage", options={"expose"=true})
+     * @Rest\Get("/", name="app_api_homepage", options={"expose"=true})
      *
      * @Doc\ApiDoc(
      *      section="Homepage",
@@ -32,8 +33,10 @@ class DefaultController extends FOSRestController
     public function indexAction()
     {
         $view = View::create();
-        $view->setData(['homepage' => 'here data homepage']);
-        // Define stream format, but is json by default.
+        $tenants = $this->getDoctrine()->getManager()->getRepository(Tenant::class)->findAll();
+        $view->setData(['tenants' => $tenants]);
+
+        // Define stream format, but is Json by default.
         $view->setFormat('json');
 
         // Create json stream.

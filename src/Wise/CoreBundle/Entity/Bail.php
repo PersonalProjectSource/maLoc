@@ -27,6 +27,11 @@ class Bail
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Property", inversedBy="bail", cascade={"persist"})
+     */
+    private $property;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="loyer", type="integer")
@@ -252,5 +257,28 @@ class Bail
     {
         return $this->actif;
     }
-}
 
+    /**
+     * Set property
+     *
+     * @param \Wise\CoreBundle\Entity\Property $property
+     *
+     * @return Bail
+     */
+    public function setProperty(\Wise\CoreBundle\Entity\Property $property = null)
+    {
+        $this->property = $property;
+
+        return $this;
+    }
+
+    /**
+     * Get property
+     *
+     * @return \Wise\CoreBundle\Entity\Property
+     */
+    public function getProperty()
+    {
+        return $this->property;
+    }
+}

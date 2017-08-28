@@ -22,6 +22,15 @@ class Document
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Bail", inversedBy="document", cascade={"all"})
+     */
+    private $bail;
+    /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Property", inversedBy="document", cascade={"persist"})
+     */
+    private $property;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=255)

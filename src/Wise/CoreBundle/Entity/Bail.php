@@ -4,6 +4,8 @@ namespace Wise\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Wise\CoreBundle\Entity\Document as Document;
+
 /**
  * Bail
  *
@@ -27,7 +29,22 @@ class Bail
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Property", inversedBy="bail", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Document", mappedBy="bail", cascade={"all"})
+     */
+    private $document;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Tenant", mappedBy="bail", cascade={"all"})
+     */
+    private $tenant;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\InterventionRequest", mappedBy="bail", cascade={"all"})
+     */
+    private $interventionRequest;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Property", cascade={"persist"})
      */
     private $property;
 

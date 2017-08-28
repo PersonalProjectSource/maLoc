@@ -22,6 +22,21 @@ class Property
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Owner", inversedBy="property")
+     */
+    private $owner;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Document", mappedBy="property", cascade={"persist"})
+     */
+    private $document;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Bail", mappedBy="property", cascade={"persist"})
+     */
+    private $bail;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=255)

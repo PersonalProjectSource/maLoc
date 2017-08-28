@@ -22,6 +22,11 @@ class InterventionRequest
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Bail", cascade={"persist"})
+     */
+    private $bail;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="type", type="string", length=255)

@@ -3,6 +3,7 @@
 namespace Wise\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Mapping\MetadataInterface;
 
 /**
  * Tenant
@@ -20,6 +21,11 @@ class Tenant
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Bail", inversedBy="tenant", cascade={"persist"})
+     */
+    private $bail;
 
     /**
      * @var string

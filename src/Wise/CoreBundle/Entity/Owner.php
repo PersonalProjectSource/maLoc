@@ -22,6 +22,16 @@ class Owner
     private $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Property", mappedBy="owner", cascade={"all"})
+     */
+    private $property;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Event", mappedBy="owner", cascade={"persist"})
+     */
+    private $event;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
@@ -48,7 +58,6 @@ class Owner
      * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
     private $email;
-
 
     /**
      * Get id

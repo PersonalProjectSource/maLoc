@@ -6,12 +6,16 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Wise\CoreBundle\Entity\Tenant;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Nelmio\ApiDocBundle\Annotation as Doc;
+use Wise\CoreBundle\Handler\TenantHandler;
+use Wise\CoreBundle\Manager\TenantManager;
+use Wise\CoreBundle\Repository\TenantRepository;
 
 /**
  * Tenant controller.
@@ -68,7 +72,7 @@ class TenantController extends FOSRestController
     public function showAction($tenantId)
     {
         $repository = $this->getDoctrine()->getManager()->getRepository(Tenant::class);
-        $tenant = $repository->find($tenantId); // TODO faire une gestion d'exception si pas trouver.
+        $tenant = $repository->find($tenantId); // TODO faire une gestion d'exception si pas trouvé.
         $view = View::create();
         $view->setData(['tenant' => $tenant]);
         $view->setFormat('json');
@@ -83,21 +87,12 @@ class TenantController extends FOSRestController
      */
     public function editAction(Request $request, $tenantId)
     {
-        $em = $this->getDoctrine()->getManager();
-        $tenant = $this->getDoctrine()->getManager()->getRepository(Tenant::class)->find($tenantId);
-        $editForm = $this->createForm('Wise\CoreBundle\Form\TenantType', $tenant, ['csrf_protection' => false]);
-        /** @var array $dataFromRequest */
-        $dataFromRequest = $request->request->all();
-        $editForm->submit($dataFromRequest);
-        // TODO Ameliorer avec le deport de certaines ligne de code dans le Handler.
-        // TODO pourquoi lorsqu'on hydrate les enfants, les parents ne sont pas hydraté automatiquement.
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $em->persist($tenant);
-            $em->flush();
-        }
+        $tenant = $this->get(TenantHandler::class)->handle($request);
         // View creation for Json stream.
         $view = View::create();
-        $view->setData(['tenant' => $tenant, $editForm->getName() => $editForm->getData(), 'formsErrors' => $editForm->getErrors()->current()] );
+        $view->setData([
+            'tenant' => $tenant
+        ]);
         $view->setFormat('json');
 
         return $this->handleView($view);

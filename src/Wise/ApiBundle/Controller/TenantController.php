@@ -106,31 +106,11 @@ class TenantController extends FOSRestController
      */
     public function deleteAction(Request $request, Tenant $tenant)
     {
-        $form = $this->createDeleteForm($tenant);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($tenant);
             $em->flush();
-        }
-
+        // TODO faire le retour Json.
         return $this->redirectToRoute('tenant_index');
     }
 
-    /**
-     * Creates a form to delete a tenant entity.
-     *
-     * @param Tenant $tenant The tenant entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Tenant $tenant)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('tenant_delete', array('id' => $tenant->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }
 }

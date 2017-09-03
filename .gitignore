@@ -2,6 +2,7 @@
 /app/config/parameters.yml
 /build/
 .idea/
+coverage/
 /phpunit.xml
 /var/*
 !/var/cache

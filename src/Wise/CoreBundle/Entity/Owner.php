@@ -164,5 +164,80 @@ class Owner
     {
         return $this->email;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->property = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->event = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add property
+     *
+     * @param \Wise\CoreBundle\Entity\Property $property
+     *
+     * @return Owner
+     */
+    public function addProperty(\Wise\CoreBundle\Entity\Property $property)
+    {
+        $this->property[] = $property;
+
+        return $this;
+    }
+
+    /**
+     * Remove property
+     *
+     * @param \Wise\CoreBundle\Entity\Property $property
+     */
+    public function removeProperty(\Wise\CoreBundle\Entity\Property $property)
+    {
+        $this->property->removeElement($property);
+    }
+
+    /**
+     * Get property
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProperty()
+    {
+        return $this->property;
+    }
+
+    /**
+     * Add event
+     *
+     * @param \Wise\CoreBundle\Entity\Event $event
+     *
+     * @return Owner
+     */
+    public function addEvent(\Wise\CoreBundle\Entity\Event $event)
+    {
+        $this->event[] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Remove event
+     *
+     * @param \Wise\CoreBundle\Entity\Event $event
+     */
+    public function removeEvent(\Wise\CoreBundle\Entity\Event $event)
+    {
+        $this->event->removeElement($event);
+    }
+
+    /**
+     * Get event
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEvent()
+    {
+        return $this->event;
+    }
+}

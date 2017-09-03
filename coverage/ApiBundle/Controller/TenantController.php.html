@@ -59,7 +59,7 @@
        </div>
 </td>
       <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;6</div></td>
+      <td class="danger small"><div align="right">0&nbsp;/&nbsp;5</div></td>
       <td class="danger small"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></td>
       <td class="danger big">       <div class="progress">
          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
@@ -68,7 +68,7 @@
        </div>
 </td>
       <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;56</div></td>
+      <td class="danger small"><div align="right">0&nbsp;/&nbsp;45</div></td>
      </tr>
 
      <tr>
@@ -88,8 +88,8 @@
        </div>
 </td>
       <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;6</div></td>
-      <td class="danger small">110</td>
+      <td class="danger small"><div align="right">0&nbsp;/&nbsp;5</div></td>
+      <td class="danger small">56</td>
       <td class="danger big">       <div class="progress">
          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
            <span class="sr-only">0.00% covered (danger)</span>
@@ -97,7 +97,7 @@
        </div>
 </td>
       <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;56</div></td>
+      <td class="danger small"><div align="right">0&nbsp;/&nbsp;45</div></td>
      </tr>
 
      <tr>
@@ -194,27 +194,6 @@
 </td>
       <td class="danger small"><div align="right">0.00%</div></td>
       <td class="danger small"><div align="right">0&nbsp;/&nbsp;1</div></td>
-      <td class="danger small">12</td>
-      <td class="danger big">       <div class="progress">
-         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
-           <span class="sr-only">0.00% covered (danger)</span>
-         </div>
-       </div>
-</td>
-      <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;10</div></td>
-     </tr>
-
-     <tr>
-      <td class="danger" colspan="4">&nbsp;<a href="#128"><abbr title="createDeleteForm(Tenant $tenant)">createDeleteForm</abbr></a></td>
-      <td class="danger big">       <div class="progress">
-         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
-           <span class="sr-only">0.00% covered (danger)</span>
-         </div>
-       </div>
-</td>
-      <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;1</div></td>
       <td class="danger small">2</td>
       <td class="danger big">       <div class="progress">
          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
@@ -223,7 +202,7 @@
        </div>
 </td>
       <td class="danger small"><div align="right">0.00%</div></td>
-      <td class="danger small"><div align="right">0&nbsp;/&nbsp;7</div></td>
+      <td class="danger small"><div align="right">0&nbsp;/&nbsp;6</div></td>
      </tr>
 
 
@@ -339,34 +318,14 @@
      <tr><td><div align="right"><a name="106"></a><a href="#106">106</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></td></tr>
      <tr><td><div align="right"><a name="107"></a><a href="#107">107</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span class="default">&nbsp;</span><span class="keyword">function</span><span class="default">&nbsp;</span><span class="default">deleteAction</span><span class="keyword">(</span><span class="default">Request</span><span class="default">&nbsp;</span><span class="default">$request</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="default">Tenant</span><span class="default">&nbsp;</span><span class="default">$tenant</span><span class="keyword">)</span></td></tr>
      <tr class="danger"><td><div align="right"><a name="108"></a><a href="#108">108</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">{</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="109"></a><a href="#109">109</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">$form</span><span class="default">&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">createDeleteForm</span><span class="keyword">(</span><span class="default">$tenant</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="110"></a><a href="#110">110</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">$form</span><span class="default">-&gt;</span><span class="default">handleRequest</span><span class="keyword">(</span><span class="default">$request</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
-     <tr><td><div align="right"><a name="111"></a><a href="#111">111</a></div></td><td class="codeLine"></td></tr>
-     <tr class="danger"><td><div align="right"><a name="112"></a><a href="#112">112</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">if</span><span class="default">&nbsp;</span><span class="keyword">(</span><span class="default">$form</span><span class="default">-&gt;</span><span class="default">isSubmitted</span><span class="keyword">(</span><span class="keyword">)</span><span class="default">&nbsp;</span><span class="default">&amp;&amp;</span><span class="default">&nbsp;</span><span class="default">$form</span><span class="default">-&gt;</span><span class="default">isValid</span><span class="keyword">(</span><span class="keyword">)</span><span class="keyword">)</span><span class="default">&nbsp;</span><span class="keyword">{</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="113"></a><a href="#113">113</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">$em</span><span class="default">&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">getDoctrine</span><span class="keyword">(</span><span class="keyword">)</span><span class="default">-&gt;</span><span class="default">getManager</span><span class="keyword">(</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="114"></a><a href="#114">114</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">$em</span><span class="default">-&gt;</span><span class="default">remove</span><span class="keyword">(</span><span class="default">$tenant</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="115"></a><a href="#115">115</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">$em</span><span class="default">-&gt;</span><span class="default">flush</span><span class="keyword">(</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="116"></a><a href="#116">116</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
-     <tr><td><div align="right"><a name="117"></a><a href="#117">117</a></div></td><td class="codeLine"></td></tr>
-     <tr class="danger"><td><div align="right"><a name="118"></a><a href="#118">118</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">redirectToRoute</span><span class="keyword">(</span><span class="default">'tenant_index'</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="119"></a><a href="#119">119</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
-     <tr><td><div align="right"><a name="120"></a><a href="#120">120</a></div></td><td class="codeLine"></td></tr>
-     <tr><td><div align="right"><a name="121"></a><a href="#121">121</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/**</span></td></tr>
-     <tr><td><div align="right"><a name="122"></a><a href="#122">122</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Creates&nbsp;a&nbsp;form&nbsp;to&nbsp;delete&nbsp;a&nbsp;tenant&nbsp;entity.</span></td></tr>
-     <tr><td><div align="right"><a name="123"></a><a href="#123">123</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></td></tr>
-     <tr><td><div align="right"><a name="124"></a><a href="#124">124</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;Tenant&nbsp;$tenant&nbsp;The&nbsp;tenant&nbsp;entity</span></td></tr>
-     <tr><td><div align="right"><a name="125"></a><a href="#125">125</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></td></tr>
-     <tr><td><div align="right"><a name="126"></a><a href="#126">126</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;\Symfony\Component\Form\Form&nbsp;The&nbsp;form</span></td></tr>
-     <tr><td><div align="right"><a name="127"></a><a href="#127">127</a></div></td><td class="codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></td></tr>
-     <tr><td><div align="right"><a name="128"></a><a href="#128">128</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">private</span><span class="default">&nbsp;</span><span class="keyword">function</span><span class="default">&nbsp;</span><span class="default">createDeleteForm</span><span class="keyword">(</span><span class="default">Tenant</span><span class="default">&nbsp;</span><span class="default">$tenant</span><span class="keyword">)</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="129"></a><a href="#129">129</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">{</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="130"></a><a href="#130">130</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">createFormBuilder</span><span class="keyword">(</span><span class="keyword">)</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="131"></a><a href="#131">131</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">-&gt;</span><span class="default">setAction</span><span class="keyword">(</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">generateUrl</span><span class="keyword">(</span><span class="default">'tenant_delete'</span><span class="keyword">,</span><span class="default">&nbsp;</span><span class="keyword">array</span><span class="keyword">(</span><span class="default">'id'</span><span class="default">&nbsp;</span><span class="default">=&gt;</span><span class="default">&nbsp;</span><span class="default">$tenant</span><span class="default">-&gt;</span><span class="default">getId</span><span class="keyword">(</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">)</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="132"></a><a href="#132">132</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">-&gt;</span><span class="default">setMethod</span><span class="keyword">(</span><span class="default">'DELETE'</span><span class="keyword">)</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="133"></a><a href="#133">133</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">-&gt;</span><span class="default">getForm</span><span class="keyword">(</span><span class="keyword">)</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="134"></a><a href="#134">134</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">;</span></td></tr>
-     <tr class="danger"><td><div align="right"><a name="135"></a><a href="#135">135</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
-     <tr><td><div align="right"><a name="136"></a><a href="#136">136</a></div></td><td class="codeLine"><span class="keyword">}</span></td></tr>
+     <tr class="danger"><td><div align="right"><a name="109"></a><a href="#109">109</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">$em</span><span class="default">&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">getDoctrine</span><span class="keyword">(</span><span class="keyword">)</span><span class="default">-&gt;</span><span class="default">getManager</span><span class="keyword">(</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
+     <tr class="danger"><td><div align="right"><a name="110"></a><a href="#110">110</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">$em</span><span class="default">-&gt;</span><span class="default">remove</span><span class="keyword">(</span><span class="default">$tenant</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
+     <tr class="danger"><td><div align="right"><a name="111"></a><a href="#111">111</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="default">$em</span><span class="default">-&gt;</span><span class="default">flush</span><span class="keyword">(</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
+     <tr><td><div align="right"><a name="112"></a><a href="#112">112</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//&nbsp;TODO&nbsp;faire&nbsp;le&nbsp;retour&nbsp;Json.</span></td></tr>
+     <tr class="danger"><td><div align="right"><a name="113"></a><a href="#113">113</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span class="default">&nbsp;</span><span class="default">$this</span><span class="default">-&gt;</span><span class="default">redirectToRoute</span><span class="keyword">(</span><span class="default">'tenant_index'</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
+     <tr class="danger"><td><div align="right"><a name="114"></a><a href="#114">114</a></div></td><td class="codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">}</span></td></tr>
+     <tr><td><div align="right"><a name="115"></a><a href="#115">115</a></div></td><td class="codeLine"></td></tr>
+     <tr><td><div align="right"><a name="116"></a><a href="#116">116</a></div></td><td class="codeLine"><span class="keyword">}</span></td></tr>
 
     </tbody>
    </table>
@@ -379,7 +338,7 @@
      <span class="warning"><strong>Dead Code</strong></span>
     </p>
     <p>
-     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 5.2.2</a> using <a href="https://secure.php.net/" target="_top">PHP 7.1.6</a> with <a href="https://xdebug.org/">Xdebug 2.5.5</a> and <a href="https://phpunit.de/">PHPUnit 6.3.0</a> at Fri Aug 25 11:05:27 CEST 2017.</small>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 5.2.2</a> using <a href="https://secure.php.net/" target="_top">PHP 7.1.6</a> with <a href="https://xdebug.org/">Xdebug 2.5.5</a> and <a href="https://phpunit.de/">PHPUnit 6.3.0</a> at Fri Sep 1 12:16:03 CEST 2017.</small>
     </p>
     <a title="Back to the top" id="toplink" href="#"><span class="glyphicon glyphicon-arrow-up"></span></a>
    </footer>

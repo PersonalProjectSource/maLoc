@@ -160,5 +160,28 @@ class Tenant
     {
         return $this->email;
     }
-}
 
+    /**
+     * Set bail
+     *
+     * @param \Wise\CoreBundle\Entity\Bail $bail
+     *
+     * @return Tenant
+     */
+    public function setBail(\Wise\CoreBundle\Entity\Bail $bail = null)
+    {
+        $this->bail = $bail;
+
+        return $this;
+    }
+
+    /**
+     * Get bail
+     *
+     * @return \Wise\CoreBundle\Entity\Bail
+     */
+    public function getBail()
+    {
+        return $this->bail;
+    }
+}

@@ -102,5 +102,52 @@ class Document
     {
         return $this->descritption;
     }
-}
 
+    /**
+     * Set bail
+     *
+     * @param \Wise\CoreBundle\Entity\Bail $bail
+     *
+     * @return Document
+     */
+    public function setBail(\Wise\CoreBundle\Entity\Bail $bail = null)
+    {
+        $this->bail = $bail;
+
+        return $this;
+    }
+
+    /**
+     * Get bail
+     *
+     * @return \Wise\CoreBundle\Entity\Bail
+     */
+    public function getBail()
+    {
+        return $this->bail;
+    }
+
+    /**
+     * Set property
+     *
+     * @param \Wise\CoreBundle\Entity\Property $property
+     *
+     * @return Document
+     */
+    public function setProperty(\Wise\CoreBundle\Entity\Property $property = null)
+    {
+        $this->property = $property;
+
+        return $this;
+    }
+
+    /**
+     * Get property
+     *
+     * @return \Wise\CoreBundle\Entity\Property
+     */
+    public function getProperty()
+    {
+        return $this->property;
+    }
+}

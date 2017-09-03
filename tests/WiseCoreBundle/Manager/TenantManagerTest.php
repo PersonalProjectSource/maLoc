@@ -29,22 +29,12 @@ class TenantManagerTest extends TestCase
             ->getMock()
         ;
         */
-
         $this->repository = $this->createMock(TenantRepository::class);
-
         $this->manager = new TenantManager($this->em, $this->repository);
     }
+
     /**
-     *
-        public function save(Tenant $tenant)
-        {
-            if (null == $tenant && !isInstanceOf(Tenant::class)) {
-                throw new \Exception("Objet null ou mauvaise instance");
-            }
-            $this->em->persist($tenant);
-            $this->em->flush();
-            return $tenant;
-        }
+     *  Test the instance of $tenant saving.
      */
     public function testSave()
     {

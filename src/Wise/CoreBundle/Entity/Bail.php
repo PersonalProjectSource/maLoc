@@ -298,4 +298,115 @@ class Bail
     {
         return $this->property;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->document = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tenant = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->interventionRequest = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add document
+     *
+     * @param \Wise\CoreBundle\Entity\Document $document
+     *
+     * @return Bail
+     */
+    public function addDocument(\Wise\CoreBundle\Entity\Document $document)
+    {
+        $this->document[] = $document;
+
+        return $this;
+    }
+
+    /**
+     * Remove document
+     *
+     * @param \Wise\CoreBundle\Entity\Document $document
+     */
+    public function removeDocument(\Wise\CoreBundle\Entity\Document $document)
+    {
+        $this->document->removeElement($document);
+    }
+
+    /**
+     * Get document
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDocument()
+    {
+        return $this->document;
+    }
+
+    /**
+     * Add tenant
+     *
+     * @param \Wise\CoreBundle\Entity\Tenant $tenant
+     *
+     * @return Bail
+     */
+    public function addTenant(\Wise\CoreBundle\Entity\Tenant $tenant)
+    {
+        $this->tenant[] = $tenant;
+
+        return $this;
+    }
+
+    /**
+     * Remove tenant
+     *
+     * @param \Wise\CoreBundle\Entity\Tenant $tenant
+     */
+    public function removeTenant(\Wise\CoreBundle\Entity\Tenant $tenant)
+    {
+        $this->tenant->removeElement($tenant);
+    }
+
+    /**
+     * Get tenant
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTenant()
+    {
+        return $this->tenant;
+    }
+
+    /**
+     * Add interventionRequest
+     *
+     * @param \Wise\CoreBundle\Entity\InterventionRequest $interventionRequest
+     *
+     * @return Bail
+     */
+    public function addInterventionRequest(\Wise\CoreBundle\Entity\InterventionRequest $interventionRequest)
+    {
+        $this->interventionRequest[] = $interventionRequest;
+
+        return $this;
+    }
+
+    /**
+     * Remove interventionRequest
+     *
+     * @param \Wise\CoreBundle\Entity\InterventionRequest $interventionRequest
+     */
+    public function removeInterventionRequest(\Wise\CoreBundle\Entity\InterventionRequest $interventionRequest)
+    {
+        $this->interventionRequest->removeElement($interventionRequest);
+    }
+
+    /**
+     * Get interventionRequest
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInterventionRequest()
+    {
+        return $this->interventionRequest;
+    }
 }

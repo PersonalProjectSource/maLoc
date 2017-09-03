@@ -13,6 +13,7 @@ use Wise\CoreBundle\Entity\Tenant;
 use Wise\CoreBundle\Form\TenantType;
 use Wise\CoreBundle\Handler\TenantHandler;
 use Wise\CoreBundle\Manager\TenantManager;
+use Wise\CoreBundle\Repository\TenantRepository;
 
 
 class TenantHandlerTest extends TestCase
@@ -21,6 +22,7 @@ class TenantHandlerTest extends TestCase
     private $tenantHandler;
     private $tenantManger;
     private $formFactory;
+    private $repository;
 
     /**
      *
@@ -37,7 +39,13 @@ class TenantHandlerTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock()
         ;
-        $this->tenantHandler = new TenantHandler($this->tenantManger, $this->formFactory);
+
+        $this->repository = $this->getMockBuilder(TenantRepository::class)
+            ->setMethods(['findOneBy'])
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+        $this->tenantHandler = new TenantHandler($this->tenantManger, $this->formFactory, $this->repository);
     }
     /**
      * public function handle(Request $request)
@@ -54,37 +62,48 @@ class TenantHandlerTest extends TestCase
      */
     public function testHandle()
     {
-        $request = new Request([], ['nom' => 'brau', 'prenom' => 'laurent', 'pseudo' => 'lolo']);
+        $request = new Request(
+            [],
+            ['nom' => 'brau', 'prenom' => 'laurent', 'pseudo' => 'lolo', 'email' => 'laurent.brau@gmail.com']);
         $tenant = new Tenant();
         $tenant->setPseudo('lolo');
         $tenant->setPrenom('laurent');
         $tenant->setNom('brau');
+        $data = $request->request->all();
 
         $tenantForm = $this->getMockBuilder(Form::class)
             ->setMethods(['submit'])
             ->disableOriginalConstructor()
             ->getMock()
         ;
+
         $tenantForm
             ->expects($this->once())
             ->method('submit')
-            ->with(['nom' => 'brau', 'prenom' => 'laurent', 'pseudo' => 'lolo'])
+            ->with(['nom' => 'brau', 'prenom' => 'laurent', 'pseudo' => 'lolo', 'email' => 'laurent.brau@gmail.com'])
         ;
+
+        $this->repository->expects($this->once())
+            ->method('findOneBy')
+            ->with(['email' => 'laurent.brau@gmail.com'])
+            ->willReturn($tenant);
+        ;
+
         $this->formFactory
             ->expects($this->once())
             ->method('create')
-            ->with(TenantType::class, $this->isInstanceOf(Tenant::class))
-            ->willReturn($tenantForm);
+            ->with(TenantType::class, $tenant)
+            ->willReturn($tenantForm)
         ;
+
         $this->tenantManger
             ->expects($this->once())
             ->method('save')
-            ->with(new Tenant())
-            ->willReturn($tenant)
+            ->with($tenant)
         ;
+        $this->tenantHandler->handle($request);
 
-        $result = $this->tenantHandler->handle($request);
-        $this->assertInstanceOf(Tenant::class, $result);
-        $this->assertEquals($tenant, $result);
+        //$this->assertInstanceOf(Tenant::class, $result);
+        //$this->assertEquals($tenant, $result);
     }
 }

@@ -22,6 +22,16 @@ class Message
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Owner", inversedBy="messages", cascade={"persist"})
+     */
+    private $owner;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Tenant", inversedBy="messages", cascade={"persist"})
+     */
+    private $tenant;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="contenu", type="text")

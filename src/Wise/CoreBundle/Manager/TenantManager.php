@@ -28,10 +28,6 @@ class TenantManager implements TenantManagerInterface
      */
     public function save(Tenant $tenant)
     {
-        if (null == $tenant && !isInstanceOf(Tenant::class)) {
-            throw new \Exception("Objet null ou mauvaise instance");
-        }
-
         $this->em->persist($tenant);
         $this->em->flush();
 

@@ -7,7 +7,9 @@ namespace Wise\CoreBundle\Handler;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\CssSelector\Parser\Handler\HandlerInterface;
+use Symfony\Component\Translation\Exception\NotFoundResourceException;
 use Wise\CoreBundle\Entity\Tenant;
+use Wise\CoreBundle\Form\TenantType;
 use Wise\CoreBundle\Manager\TenantManager;
 use Wise\CoreBundle\Repository\TenantRepository;
 
@@ -35,7 +37,7 @@ class TenantHandler implements CoreHandlerInterface
     {
         $data = $request->request->all();
         $tenant = $this->repository->findOneBy(['email' => $data['email']]);
-        $tenantForm = $this->formFactory->create('Wise\CoreBundle\Form\TenantType', $tenant);
+        $tenantForm = $this->formFactory->create(TenantType::class, $tenant);
         // TODO faire un test si les validateur des entités se déclenchent au submit.
         $tenantForm->submit($data);
 

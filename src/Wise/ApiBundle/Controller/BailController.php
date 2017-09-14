@@ -13,7 +13,8 @@ use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Nelmio\ApiDocBundle\Annotation as Doc;
-
+use Wise\CoreBundle\Form\BailType;
+use Wise\CoreBundle\Handler\BailHandler;
 
 
 /**
@@ -65,22 +66,7 @@ class BailController extends FOSRestController
      */
     public function newAction(Request $request)
     {
-        $bail = new Bail();
-        $form = $this->createForm('Wise\CoreBundle\Form\BailType', $bail);
-        $form->handleRequest($request);
-        //dump($request, $form->getData(), $bail);die;
-        $view = View::create();
-        $view->setFormat('json');
-        // Is valid n'acceptait pas la soumission car il a fallu modifier un peu le formulaire.
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($bail);
-            $em->flush();
-            $view->setData(['message' => "Le bail a bien été enregistré"]); // TODO faire la gestion des traductions.
-
-            return $this->handleView($view);
-        }
-        $view->setData(['message' => "Un problème est survenue lors de la validation"]);
+        $view = $this->get(BailHandler::class)->handle($request);
 
         return $this->handleView($view);
     }
@@ -110,7 +96,6 @@ class BailController extends FOSRestController
      */
     public function editAction(Request $request, Bail $bail)
     {
-        $deleteForm = $this->createDeleteForm($bail);
         $editForm = $this->createForm('Wise\CoreBundle\Form\BailType', $bail);
         $editForm->handleRequest($request);
 
@@ -123,7 +108,6 @@ class BailController extends FOSRestController
         return $this->render('bail/edit.html.twig', array(
             'bail' => $bail,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 

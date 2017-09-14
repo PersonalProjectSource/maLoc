@@ -27,9 +27,19 @@ class Owner
     private $property;
 
     /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Message", mappedBy="owner", cascade={"persist"})
+     */
+    private $messages;
+
+    /**
      * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Event", mappedBy="owner", cascade={"persist"})
      */
     private $event;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\InterventionRequest", mappedBy="owner", cascade={"persist"})
+     */
+    private $interventionRequests;
 
     /**
      * @var string
@@ -239,5 +249,73 @@ class Owner
     public function getEvent()
     {
         return $this->event;
+    }
+
+    /**
+     * Add message
+     *
+     * @param \Wise\CoreBundle\Entity\Message $message
+     *
+     * @return Owner
+     */
+    public function addMessage(\Wise\CoreBundle\Entity\Message $message)
+    {
+        $this->messages[] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Remove message
+     *
+     * @param \Wise\CoreBundle\Entity\Message $message
+     */
+    public function removeMessage(\Wise\CoreBundle\Entity\Message $message)
+    {
+        $this->messages->removeElement($message);
+    }
+
+    /**
+     * Get messages
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMessages()
+    {
+        return $this->messages;
+    }
+
+    /**
+     * Add interventionRequest
+     *
+     * @param \Wise\CoreBundle\Entity\InterventionRequest $interventionRequest
+     *
+     * @return Owner
+     */
+    public function addInterventionRequest(\Wise\CoreBundle\Entity\InterventionRequest $interventionRequest)
+    {
+        $this->interventionRequests[] = $interventionRequest;
+
+        return $this;
+    }
+
+    /**
+     * Remove interventionRequest
+     *
+     * @param \Wise\CoreBundle\Entity\InterventionRequest $interventionRequest
+     */
+    public function removeInterventionRequest(\Wise\CoreBundle\Entity\InterventionRequest $interventionRequest)
+    {
+        $this->interventionRequests->removeElement($interventionRequest);
+    }
+
+    /**
+     * Get interventionRequests
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInterventionRequests()
+    {
+        return $this->interventionRequests;
     }
 }

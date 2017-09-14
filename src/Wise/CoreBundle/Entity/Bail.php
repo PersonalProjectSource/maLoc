@@ -14,7 +14,6 @@ use Wise\CoreBundle\Entity\Document as Document;
  */
 class Bail
 {
-
     const LOCATION_VIDE   = 0;
     const LOCATION_MEUBLE = 1;
     const AUTRE_TYPE      = 2;
@@ -29,7 +28,7 @@ class Bail
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Document", mappedBy="bail", cascade={"all"})
+     * @ORM\OneToMany(targetEntity="Document", mappedBy="bail", cascade={"persist"})
      */
     private $document;
 
@@ -41,10 +40,10 @@ class Bail
     /**
      * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\InterventionRequest", mappedBy="bail", cascade={"all"})
      */
-    private $interventionRequest;
+    private $interventionRequests;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Property", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Property", inversedBy="bail",  cascade={"persist"})
      */
     private $property;
 

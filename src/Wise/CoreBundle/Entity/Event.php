@@ -22,6 +22,11 @@ class Event
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Owner", inversedBy="event", cascade={"persist"})
+     */
+    private $owner;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="enable", type="boolean")

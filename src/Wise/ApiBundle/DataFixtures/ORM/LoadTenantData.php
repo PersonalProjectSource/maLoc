@@ -24,8 +24,8 @@ class LoadTenantData extends AbstractFixture
     public function load(ObjectManager $manager)
     {
         $tenant = new Tenant();
-        $tenant->setEmail('laurent.brau@gmail.com');
-        $tenant->setNom('BRAU');
+        $tenant->setEmail('laurent.bra@gmail.com');
+        $tenant->setNom('BRA');
         $tenant->setPrenom('Laurent');
         $tenant->setPseudo('Optimus');
 

@@ -1,8 +1,11 @@
 <?php
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
+namespace tests\WiseApiBundle\Controller;
 
-class TenantcontrollerTest extends \Symfony\Bundle\FrameworkBundle\Test\WebTestCase
+use Symfony\Component\HttpFoundation\Response;
+use Wise\CoreBundle\Tests\WebTestCase;
+
+class TenantcontrollerTest extends WebTestCase
 {
     private $client;
     private $em;
@@ -20,6 +23,12 @@ class TenantcontrollerTest extends \Symfony\Bundle\FrameworkBundle\Test\WebTestC
 
     public function testIndexAction()
     {
-        return;
+        $this->loadFixtures(self::$kernel);
+
+        $clientSimple = static::createClient();
+        $crawler = $clientSimple->request('GET', '/api/tenant/list');
+
+        $this->assertContains("BRAU", $clientSimple->getResponse()->getContent());
+        $this->assertEquals(Response::HTTP_OK, $clientSimple->getResponse()->getStatusCode());
     }
 }

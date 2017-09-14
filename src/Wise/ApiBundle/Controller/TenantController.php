@@ -2,7 +2,10 @@
 
 namespace Wise\ApiBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Translation\Exception\NotFoundResourceException;
 use Wise\CoreBundle\Entity\Tenant;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -28,6 +31,7 @@ class TenantController extends FOSRestController
      * Lists all tenant entities.
      *
      * @Rest\Get("/tenant/list", name="app_tenant_list")
+     * @Cache(smaxage="20")
      */
     public function indexAction()
     {
@@ -37,29 +41,36 @@ class TenantController extends FOSRestController
         $view->setFormat('json');
         $view->setData($tenants);
 
+        //$view->getResponse()->setExpires(new \DateTime("+3 hour"));
+        //$view->getResponse()->setLastModified(new \DateTime("-1 hour"));
+
         return $this->handleView($view);
     }
 
     /**
      * Creates a new tenant entity.
      *
-     * @Rest\Get("/tenant/new", name="app_tenant_new")
+     * @Rest\Post("/tenant/new", name="app_tenant_new")
+     * @param Request $request
+     * @return Response
      */
     public function newAction(Request $request)
     {
         $tenant = new Tenant();
         $form = $this->createForm('Wise\CoreBundle\Form\TenantType', $tenant);
         $form->handleRequest($request);
+        $view = View::create();
+        $view->setFormat('json');
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($tenant);
             $em->flush();
-        }
+            $view->setData(['message' => sprintf('Le locataire %d a été ajouté avec succes', $tenant->getId())]);
 
-        $view = View::create();
-        $view->setData(['message' => 'Le locataire a été ajouté avec succes']);
-        $view->setFormat('json');
+            return $this->handleView($view);
+        }
+        $view->setData(['message' => sprintf('Rien n\'a été enregistré', $tenant->getId())]);
 
         return $this->handleView($view);
     }
@@ -68,6 +79,8 @@ class TenantController extends FOSRestController
      * Finds and displays a tenant entity.
      *
      * @Rest\Get("/tenant/{tenantId}", name="tenant_show")
+     * @param $tenantId
+     * @return Response
      */
     public function showAction($tenantId)
     {
@@ -84,10 +97,19 @@ class TenantController extends FOSRestController
      * Displays a form to edit an existing tenant entity.
      *
      * @Rest\Post("/tenant/{tenantId}/edit", name="tenant_edit")
+     * @param Request $request
+     * @return Response
+     * @internal param $tenantId
      */
-    public function editAction(Request $request, $tenantId)
+    public function editAction(Request $request)
     {
-        $tenant = $this->get(TenantHandler::class)->handle($request);
+        // TODO pourquoi l'edit est du verbe post. Dans ce cas la, le tenantId en attribut d'uri ne sert a rien.
+        try{
+            $tenant = $this->get(TenantHandler::class)->handle($request);
+        } catch (NotFoundResourceException $e) {
+            $message = sprintf("Un probleme est survenu : %s", $e->getMessage());
+            $tenant = $message;
+        }
         // View creation for Json stream.
         $view = View::create();
         $view->setData([

@@ -22,7 +22,7 @@ class Document
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Bail", inversedBy="document", cascade={"all"})
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Bail", inversedBy="document", cascade={"persist"})
      */
     private $bail;
     /**
@@ -42,7 +42,7 @@ class Document
      *
      * @ORM\Column(name="descritption", type="text")
      */
-    private $descritption;
+    private $description;
 
 
     /**

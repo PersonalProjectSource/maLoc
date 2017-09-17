@@ -21,16 +21,32 @@ class BailControllerTest extends WebTestCase
     public function testNewAction()
     {
         $client = static::createClient();
-        $client->request('POST', 'api/bail/new',
-            [
-                'nom' => 'laurent',
-                'prenom' => 'BRAU'
-            ]
+
+        // Submit a raw JSON string in the request body
+        $client->request(
+            'POST',
+            'api/bail/new',
+            array(),
+            array(),
+            array('CONTENT_TYPE' => 'application/json'),
+            '
+            {
+                "wise_corebundle_bail":
+                        {
+                            "loyer": 3333,
+                            "meuble": true,
+                            "caution": 4444,
+                            "dateDebut": "2018-02-17",
+                            "dateBailEnded": "2018-04-16 00:00:00",
+                            "type": 1,
+                            "actif": false
+                        }
+            }'
         );
-        //$client->getResponse()->setCharset('UTF-8');
-        //$client->getResponse()->setCharset('ISO-8859-1');
+
+        $content = json_decode($client->getResponse()->getContent());
+        $this->assertContains("Le bail a bien été enregistré", $content->message);
         $this->assertEquals(Response::HTTP_OK, $client->getResponse()->getStatusCode());
-        $this->assertContains("Le bail a bien été enregistré", $client->getResponse()->getContent());
     }
 
 }

@@ -69,7 +69,7 @@ class TenantHandlerTest extends TestCase
         $tenant->setPseudo('lolo');
         $tenant->setPrenom('laurent');
         $tenant->setNom('brau');
-        $data = $request->request->all();
+        //$data = $request->request->all();
 
         $tenantForm = $this->getMockBuilder(Form::class)
             ->setMethods(['submit'])
@@ -83,7 +83,8 @@ class TenantHandlerTest extends TestCase
             ->with(['nom' => 'brau', 'prenom' => 'laurent', 'pseudo' => 'lolo', 'email' => 'laurent.brau@gmail.com'])
         ;
 
-        $this->repository->expects($this->once())
+        $this->repository
+            ->expects($this->once())
             ->method('findOneBy')
             ->with(['email' => 'laurent.brau@gmail.com'])
             ->willReturn($tenant);
@@ -101,6 +102,7 @@ class TenantHandlerTest extends TestCase
             ->method('save')
             ->with($tenant)
         ;
+
         $this->tenantHandler->handle($request);
 
         //$this->assertInstanceOf(Tenant::class, $result);

@@ -39,13 +39,23 @@ class BailHandler implements CoreHandlerInterface
         $form->handleRequest($request);
         $view = View::create();
         $view->setFormat('json');
+        /*try {
+            // Is valid n'acceptait pas la soumission car il a fallu modifier un peu le formulaire.
+            if ($form->isSubmitted() && $form->isValid()) {
+                $this->manager->save($bail);
+                $view->setData(['message' => "Le bail a bien été enregistré"]); // TODO faire la gestion des traductions.
+            }
+        } catch(\Exception $e) {
+            $view->setData(['message' => sprintf('Une exception est levée %s', $e->getMessage())]);
+        }*/
+
         // Is valid n'acceptait pas la soumission car il a fallu modifier un peu le formulaire.
         if ($form->isSubmitted() && $form->isValid()) {
+            dump('pass');
             $this->manager->save($bail);
             $view->setData(['message' => "Le bail a bien été enregistré"]); // TODO faire la gestion des traductions.
-            return $view;
         }
-        $view->setData(['message' => 'Un problème est survenue lors de la validation']);
+        dump('passpa');
 
         return $view;
     }

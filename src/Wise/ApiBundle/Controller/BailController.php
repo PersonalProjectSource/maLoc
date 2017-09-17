@@ -3,6 +3,7 @@
 namespace Wise\ApiBundle\Controller;
 
 
+use PHPUnit\Runner\Exception;
 use Wise\CoreBundle\Entity\Bail;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;

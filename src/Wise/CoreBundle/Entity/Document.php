@@ -3,6 +3,8 @@
 namespace Wise\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Document
@@ -29,6 +31,15 @@ class Document
      * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Property", inversedBy="document", cascade={"persist"})
      */
     private $property;
+
+
+    /**
+     * @ORM\Column(type="string")
+
+     * @Assert\File(mimeTypes={"application/pdf"})
+     */
+    private $documentFile;
+
 
     /**
      * @var string

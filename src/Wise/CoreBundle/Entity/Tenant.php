@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Mapping\MetadataInterface;
  * @ORM\Table(name="tenant")
  * @ORM\Entity(repositoryClass="Wise\CoreBundle\Repository\TenantRepository")
  */
-class Tenant
+class Tenant implements UserInterface
 {
     /**
      * @var int

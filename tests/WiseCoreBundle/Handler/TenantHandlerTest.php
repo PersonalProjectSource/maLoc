@@ -103,7 +103,7 @@ class TenantHandlerTest extends TestCase
             ->with($tenant)
         ;
 
-        $this->tenantHandler->handle($request);
+        $this->assertEquals($tenant, $this->tenantHandler->handle($request));
 
         //$this->assertInstanceOf(Tenant::class, $result);
         //$this->assertEquals($tenant, $result);

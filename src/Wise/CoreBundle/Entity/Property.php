@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="property")
  * @ORM\Entity(repositoryClass="Wise\CoreBundle\Repository\PropertyRepository")
  */
-class Property
+class Property implements UserInterface
 {
     /**
      * @var int

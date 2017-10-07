@@ -30,6 +30,7 @@ class TenantController extends FOSRestController
     /**
      * Lists all tenant entities.
      *
+     * @Rest\View()
      * @Rest\Get("/tenant/list", name="app_tenant_list")
      * @Cache(smaxage="20")
      */
@@ -40,7 +41,6 @@ class TenantController extends FOSRestController
         $view = View::create();
         $view->setFormat('json');
         $view->setData($tenants);
-
         //$view->getResponse()->setExpires(new \DateTime("+3 hour"));
         //$view->getResponse()->setLastModified(new \DateTime("-1 hour"));
 
@@ -58,18 +58,19 @@ class TenantController extends FOSRestController
     {
         $tenant = new Tenant();
         $form = $this->createForm('Wise\CoreBundle\Form\TenantType', $tenant);
+        // bind request to form and object references.
         $form->handleRequest($request);
         $view = View::create();
         $view->setFormat('json');
-
+        // data validaton and registration data.
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($tenant);
-            $em->flush();
-            $view->setData(['message' => sprintf('Le locataire %d a été ajouté avec succes', $tenant->getId())]);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($tenant);
+        $em->flush();
+        $view->setData(['message' => sprintf('Le locataire %d a été ajouté avec succes', $tenant->getId())]);
 
-            return $this->handleView($view);
-        }
+        return $this->handleView($view);
+    }
         $view->setData(['message' => sprintf('Rien n\'a été enregistré', $tenant->getId())]);
 
         return $this->handleView($view);
@@ -85,7 +86,11 @@ class TenantController extends FOSRestController
     public function showAction($tenantId)
     {
         $repository = $this->getDoctrine()->getManager()->getRepository(Tenant::class);
-        $tenant = $repository->find($tenantId); // TODO faire une gestion d'exception si pas trouvé.
+        $tenant = $repository->find($tenantId);
+        if (null == $tenant) {
+            throw new NotFoundResourceException("Aucune ressource n'a été trouvé");
+        }
+        // Create View and tenant data binding.
         $view = View::create();
         $view->setData(['tenant' => $tenant]);
         $view->setFormat('json');
@@ -128,11 +133,14 @@ class TenantController extends FOSRestController
      */
     public function deleteAction(Request $request, Tenant $tenant)
     {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($tenant);
-            $em->flush();
-        // TODO faire le retour Json.
-        return $this->redirectToRoute('tenant_index');
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($tenant);
+        $em->flush();
+        // Create view and databinding.
+        $view = View::create();
+        $view->setFormat('json');
+        $view->setData(['message' => "L'entité a bien ete supprimée."]);
+        return $this->handleView($view);
     }
 
 }

@@ -51,11 +51,9 @@ class BailHandler implements CoreHandlerInterface
 
         // Is valid n'acceptait pas la soumission car il a fallu modifier un peu le formulaire.
         if ($form->isSubmitted() && $form->isValid()) {
-            dump('pass');
             $this->manager->save($bail);
             $view->setData(['message' => "Le bail a bien été enregistré"]); // TODO faire la gestion des traductions.
         }
-        dump('passpa');
 
         return $view;
     }

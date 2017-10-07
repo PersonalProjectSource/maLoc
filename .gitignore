@@ -1,6 +1,7 @@
 /.web-server-pid
 /app/config/parameters.yml
 /build/
+coverage/
 .idea/
 coverage/
 /phpunit.xml

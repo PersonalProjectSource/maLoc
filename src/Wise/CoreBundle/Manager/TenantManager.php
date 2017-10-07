@@ -30,7 +30,7 @@ class TenantManager implements TenantManagerInterface
     {
         $this->em->persist($tenant);
         $this->em->flush();
-
+        var_dump("########################",$tenant);
         return $tenant;
     }
 }

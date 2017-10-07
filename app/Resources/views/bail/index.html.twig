@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bails list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Loyer</th>
+                <th>Meuble</th>
+                <th>Caution</th>
+                <th>Datedebut</th>
+                <th>Datebailended</th>
+                <th>Type</th>
+                <th>Actif</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bail in bails %}
+            <tr>
+                <td><a href="{{ path('bail_show', { 'id': bail.id }) }}">{{ bail.id }}</a></td>
+                <td>{{ bail.loyer }}</td>
+                <td>{% if bail.meuble %}Yes{% else %}No{% endif %}</td>
+                <td>{{ bail.caution }}</td>
+                <td>{% if bail.dateDebut %}{{ bail.dateDebut|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if bail.dateBailEnded %}{{ bail.dateBailEnded|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ bail.type }}</td>
+                <td>{% if bail.actif %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bail_show', { 'id': bail.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bail_edit', { 'id': bail.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bail_new') }}">Create a new bail</a>
+        </li>
+    </ul>
+{% endblock %}

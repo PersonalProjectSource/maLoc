@@ -8,7 +8,10 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation as Doc;
 use FOS\RestBundle\View\View;
+use Symfony\Component\HttpFoundation\Request;
 use Wise\CoreBundle\Entity\Bail;
+use Wise\CoreBundle\Entity\Tenant;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 
 /**
@@ -18,37 +21,35 @@ use Wise\CoreBundle\Entity\Bail;
  */
 class DefaultController extends FOSRestController
 {
-    public function test() {
-        dump('voici le test');
-    }
-
     /**
-     * Return bails list.
-     * @param Request $request
-     * @Rest\Get("/", name="app_api_bail_list", options={"expose"=true})
-     * @return View
+     * Return data home page.
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @internal param Request $request
+     * @Rest\Get("/", name="app_api_homepage", options={"expose"=true})
      *
      * @Doc\ApiDoc(
-     *      section="Bail",
-     *      description="Show bails list",
-     *      statusCodes={
-     *          200="Returned if bail has been displayed",
-     *          422="Returned if list has not been displayed",
-     *          500="Returned if server error"
-     *      }
+     *      section="Homepage",
+     *      description="Show data homepage",
      * )
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-        $bails = $em->getRepository(Bail::class)->findAll();
         $view = View::create();
-        $data = ['bails' => $bails];
-        $view->setData($data);
-        // Define stream format, but is json by default.
+        $tenants = $this->getDoctrine()->getManager()->getRepository(Tenant::class)->findAll();
+        $view->setData(['tenants' => $tenants]);
+        // Define stream format, but is Json by default.
         $view->setFormat('json');
 
+        // With John.
+        $response = $this->handleView($view);
+        $response->setEtag(md5($response->getContent()));
+        if ($response->isNotModified($request)) {
+            // envoie la réponse 304 tout de suite
+            return $response;
+        }
+
         // Create json stream.
-        return $this->handleView($view);
+        return $response;
     }
 }

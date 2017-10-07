@@ -3,6 +3,8 @@
 namespace Wise\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Document
@@ -22,6 +24,24 @@ class Document
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Bail", inversedBy="document", cascade={"persist"})
+     */
+    private $bail;
+    /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Property", inversedBy="document", cascade={"persist"})
+     */
+    private $property;
+
+
+    /**
+     * @ORM\Column(type="string")
+
+     * @Assert\File(mimeTypes={"application/pdf"})
+     */
+    private $documentFile;
+
+
+    /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=255)
@@ -33,7 +53,7 @@ class Document
      *
      * @ORM\Column(name="descritption", type="text")
      */
-    private $descritption;
+    private $description;
 
 
     /**
@@ -93,5 +113,52 @@ class Document
     {
         return $this->descritption;
     }
-}
 
+    /**
+     * Set bail
+     *
+     * @param \Wise\CoreBundle\Entity\Bail $bail
+     *
+     * @return Document
+     */
+    public function setBail(\Wise\CoreBundle\Entity\Bail $bail = null)
+    {
+        $this->bail = $bail;
+
+        return $this;
+    }
+
+    /**
+     * Get bail
+     *
+     * @return \Wise\CoreBundle\Entity\Bail
+     */
+    public function getBail()
+    {
+        return $this->bail;
+    }
+
+    /**
+     * Set property
+     *
+     * @param \Wise\CoreBundle\Entity\Property $property
+     *
+     * @return Document
+     */
+    public function setProperty(\Wise\CoreBundle\Entity\Property $property = null)
+    {
+        $this->property = $property;
+
+        return $this;
+    }
+
+    /**
+     * Get property
+     *
+     * @return \Wise\CoreBundle\Entity\Property
+     */
+    public function getProperty()
+    {
+        return $this->property;
+    }
+}

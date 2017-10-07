@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bail</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bail.id }}</td>
+            </tr>
+            <tr>
+                <th>Loyer</th>
+                <td>{{ bail.loyer }}</td>
+            </tr>
+            <tr>
+                <th>Meuble</th>
+                <td>{% if bail.meuble %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Caution</th>
+                <td>{{ bail.caution }}</td>
+            </tr>
+            <tr>
+                <th>Datedebut</th>
+                <td>{% if bail.dateDebut %}{{ bail.dateDebut|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datebailended</th>
+                <td>{% if bail.dateBailEnded %}{{ bail.dateBailEnded|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ bail.type }}</td>
+            </tr>
+            <tr>
+                <th>Actif</th>
+                <td>{% if bail.actif %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bail_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('bail_edit', { 'id': bail.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

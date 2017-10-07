@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale | replace({'_':'-'}) }}">
+<head>
+    <meta charset="UTF-8">
+    {%- block stylesheets '' -%}
+</head>
+    <body class="{% block body_classes '' %}">
+        {% block body '' %}
+        {%- block scripts '' -%}
+    </body>
+</html>

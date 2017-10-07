@@ -1,0 +1,46 @@
+<html ng-app="myApp">
+    <head>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <script src="{{ asset('js/angular.js') }}"></script>
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope, $http) {
+
+                //$http.get("http://services.groupkt.com/country/get/all")
+                $http.get("http://localhost:8000/api/bail/list")
+                    .then(function(response) {
+                        $scope.bails = response.data;
+                        console.log($scope.bails);
+                    });
+            });
+        </script>
+    </head>
+    <body ng-controller="myCtrl">
+        {% verbatim %}
+        <div class="container">
+            <table class="table">
+                <caption class="alert">Un super titre</caption>
+                <tr>
+                    <th>Identifiant</th>
+                    <th>Loyer</th>
+                    <th>Caution</th>
+                    <th>Résidence</th>
+                    <th>actif</th>
+                </tr>
+                <tr ng-repeat="bail in bails">
+                    <td>{{ bail.id }}</td>
+                    <td>{{ bail.loyer }}</td>
+                    <td>{{ bail.caution }}</td>
+                    <td class="col-xs-3">
+                        <div class="alert alert-info">
+                            {{ bail.property.libelle }}<br>
+                            {{ bail.property.numero }} {{ bail.property.adresse }}
+                        </div>
+                    </td>
+                    <td>{{ bail.actif }}</td>
+                </tr>
+            </table>
+        </div>
+        {% endverbatim %}
+    </body>
+</html>

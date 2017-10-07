@@ -4,6 +4,8 @@ namespace Wise\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Wise\CoreBundle\Entity\Document as Document;
+
 /**
  * Bail
  *
@@ -12,7 +14,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Bail
 {
-
     const LOCATION_VIDE   = 0;
     const LOCATION_MEUBLE = 1;
     const AUTRE_TYPE      = 2;
@@ -25,6 +26,26 @@ class Bail
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Document", mappedBy="bail", cascade={"persist"})
+     */
+    private $document;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Tenant", mappedBy="bail", cascade={"all"})
+     */
+    private $tenant;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\InterventionRequest", mappedBy="bail", cascade={"all"})
+     */
+    private $interventionRequests;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Property", inversedBy="bail",  cascade={"persist"})
+     */
+    private $property;
 
     /**
      * @var int
@@ -50,14 +71,14 @@ class Bail
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_debut", type="datetime")
+     * @ORM\Column(name="date_debut", type="datetime", nullable=true)
      */
     private $dateDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_bail_ended", type="datetime")
+     * @ORM\Column(name="date_bail_ended", type="datetime", nullable=true)
      */
     private $dateBailEnded;
 
@@ -252,5 +273,139 @@ class Bail
     {
         return $this->actif;
     }
-}
 
+    /**
+     * Set property
+     *
+     * @param \Wise\CoreBundle\Entity\Property $property
+     *
+     * @return Bail
+     */
+    public function setProperty(\Wise\CoreBundle\Entity\Property $property = null)
+    {
+        $this->property = $property;
+
+        return $this;
+    }
+
+    /**
+     * Get property
+     *
+     * @return \Wise\CoreBundle\Entity\Property
+     */
+    public function getProperty()
+    {
+        return $this->property;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->document = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tenant = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->interventionRequest = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add document
+     *
+     * @param \Wise\CoreBundle\Entity\Document $document
+     *
+     * @return Bail
+     */
+    public function addDocument(\Wise\CoreBundle\Entity\Document $document)
+    {
+        $this->document[] = $document;
+
+        return $this;
+    }
+
+    /**
+     * Remove document
+     *
+     * @param \Wise\CoreBundle\Entity\Document $document
+     */
+    public function removeDocument(\Wise\CoreBundle\Entity\Document $document)
+    {
+        $this->document->removeElement($document);
+    }
+
+    /**
+     * Get document
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDocument()
+    {
+        return $this->document;
+    }
+
+    /**
+     * Add tenant
+     *
+     * @param \Wise\CoreBundle\Entity\Tenant $tenant
+     *
+     * @return Bail
+     */
+    public function addTenant(\Wise\CoreBundle\Entity\Tenant $tenant)
+    {
+        $this->tenant[] = $tenant;
+
+        return $this;
+    }
+
+    /**
+     * Remove tenant
+     *
+     * @param \Wise\CoreBundle\Entity\Tenant $tenant
+     */
+    public function removeTenant(\Wise\CoreBundle\Entity\Tenant $tenant)
+    {
+        $this->tenant->removeElement($tenant);
+    }
+
+    /**
+     * Get tenant
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTenant()
+    {
+        return $this->tenant;
+    }
+
+    /**
+     * Add interventionRequest
+     *
+     * @param \Wise\CoreBundle\Entity\InterventionRequest $interventionRequest
+     *
+     * @return Bail
+     */
+    public function addInterventionRequest(\Wise\CoreBundle\Entity\InterventionRequest $interventionRequest)
+    {
+        $this->interventionRequest[] = $interventionRequest;
+
+        return $this;
+    }
+
+    /**
+     * Remove interventionRequest
+     *
+     * @param \Wise\CoreBundle\Entity\InterventionRequest $interventionRequest
+     */
+    public function removeInterventionRequest(\Wise\CoreBundle\Entity\InterventionRequest $interventionRequest)
+    {
+        $this->interventionRequest->removeElement($interventionRequest);
+    }
+
+    /**
+     * Get interventionRequest
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInterventionRequest()
+    {
+        return $this->interventionRequest;
+    }
+}

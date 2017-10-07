@@ -3,6 +3,7 @@
 namespace Wise\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Mapping\MetadataInterface;
 
 /**
  * Tenant
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="tenant")
  * @ORM\Entity(repositoryClass="Wise\CoreBundle\Repository\TenantRepository")
  */
-class Tenant
+class Tenant implements UserInterface
 {
     /**
      * @var int
@@ -20,6 +21,21 @@ class Tenant
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Bail", inversedBy="tenant", cascade={"persist"})
+     */
+    private $bail;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Message", mappedBy="tenant", cascade={"persist"})
+     */
+    private $messages;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\InterventionRequest", mappedBy="tenant", cascade={"persist"})
+     */
+    private $interventionRequests;
 
     /**
      * @var string
@@ -154,5 +170,104 @@ class Tenant
     {
         return $this->email;
     }
-}
 
+    /**
+     * Set bail
+     *
+     * @param \Wise\CoreBundle\Entity\Bail $bail
+     *
+     * @return Tenant
+     */
+    public function setBail(\Wise\CoreBundle\Entity\Bail $bail = null)
+    {
+        $this->bail = $bail;
+
+        return $this;
+    }
+
+    /**
+     * Get bail
+     *
+     * @return \Wise\CoreBundle\Entity\Bail
+     */
+    public function getBail()
+    {
+        return $this->bail;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->messages = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->interventionRequests = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add message
+     *
+     * @param \Wise\CoreBundle\Entity\Message $message
+     *
+     * @return Tenant
+     */
+    public function addMessage(\Wise\CoreBundle\Entity\Message $message)
+    {
+        $this->messages[] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Remove message
+     *
+     * @param \Wise\CoreBundle\Entity\Message $message
+     */
+    public function removeMessage(\Wise\CoreBundle\Entity\Message $message)
+    {
+        $this->messages->removeElement($message);
+    }
+
+    /**
+     * Get messages
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMessages()
+    {
+        return $this->messages;
+    }
+
+    /**
+     * Add interventionRequest
+     *
+     * @param \Wise\CoreBundle\Entity\InterventionRequest $interventionRequest
+     *
+     * @return Tenant
+     */
+    public function addInterventionRequest(\Wise\CoreBundle\Entity\InterventionRequest $interventionRequest)
+    {
+        $this->interventionRequests[] = $interventionRequest;
+
+        return $this;
+    }
+
+    /**
+     * Remove interventionRequest
+     *
+     * @param \Wise\CoreBundle\Entity\InterventionRequest $interventionRequest
+     */
+    public function removeInterventionRequest(\Wise\CoreBundle\Entity\InterventionRequest $interventionRequest)
+    {
+        $this->interventionRequests->removeElement($interventionRequest);
+    }
+
+    /**
+     * Get interventionRequests
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInterventionRequests()
+    {
+        return $this->interventionRequests;
+    }
+}

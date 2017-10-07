@@ -1,12 +1,21 @@
 imports:
     - { resource: config_dev.yml }
 
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                driver: pdo_sqlite
+                path: '%kernel.cache_dir%/test.db'
+
 framework:
     test: ~
     session:
         storage_id: session.storage.mock_file
     profiler:
-        collect: false
+        enabled: true #https://symfony.com/doc/current/testing.html
+        collect: true
 
 web_profiler:
     toolbar: false

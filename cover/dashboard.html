@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /Users/laurentbrau/Sites/newWise/WiseInvestor/src/Wise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href=".css/bootstrap.min.css" rel="stylesheet">
+  <link href=".css/nv.d3.min.css" rel="stylesheet">
+  <link href=".css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src=".js/html5shiv.min.js"></script>
+  <script src=".js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">/Users/laurentbrau/Sites/newWise/WiseInvestor/src/Wise</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CoreBundle/Tests/WebTestCase.php.html#10">WebTestCase</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/InterventionRequest.php.html#13">InterventionRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Manager/TenantManager.php.html#11">TenantManager</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Manager/GenericManager.php.html#7">GenericManager</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Manager/BailManager.php.html#7">BailManager</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Handler/TenantHandler.php.html#15">TenantHandler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Handler/BailHandler.php.html#8">BailHandler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/TenantType.php.html#9">TenantType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/OwnerType.php.html#9">OwnerType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/BailType.php.html#10">BailType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#14">Tenant</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#13">Property</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#13">Owner</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#13">Message</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Event.php.html#13">Event</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Controller/DefaultController.php.html#7">DefaultController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Document.php.html#13">Document</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#15">Bail</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/DependencyInjection/WiseCoreExtension.php.html#15">WiseCoreExtension</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BoBundle/Tests/Controller/DefaultControllerTest.php.html#7">DefaultControllerTest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BoBundle/DependencyInjection/WiseBoExtension.php.html#15">WiseBoExtension</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/DependencyInjection/Configuration.php.html#13">Configuration</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/DataFixtures/ORM/LoadTenantData.php.html#17">LoadTenantData</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/DataFixtures/ORM/LoadPropertyData.php.html#17">LoadPropertyData</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/DataFixtures/ORM/LoadOwnerData.php.html#20">LoadOwnerData</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/DataFixtures/ORM/LoadBailData.php.html#17">LoadBailData</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/TenantController.php.html#26">TenantController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#18">OwnerController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/BailController.php.html#24">BailController</a></td><td class="text-right">41%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#18">OwnerController</a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="ApiBundle/Controller/TenantController.php.html#26">TenantController</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="ApiBundle/Controller/BailController.php.html#24">BailController</a></td><td class="text-right">25</td></tr>
+       <tr><td><a href="CoreBundle/Tests/WebTestCase.php.html#10">WebTestCase</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ApiBundle/Controller/BailController.php.html#66"><abbr title="BailController::newAction">newAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#135"><abbr title="Property::getResidence">getResidence</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#234"><abbr title="Owner::removeEvent">removeEvent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#244"><abbr title="Owner::getEvent">getEvent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#87"><abbr title="Property::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#99"><abbr title="Property::setLibelle">setLibelle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#111"><abbr title="Property::getLibelle">getLibelle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#123"><abbr title="Property::setResidence">setResidence</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#147"><abbr title="Property::setNumero">setNumero</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#210"><abbr title="Owner::getProperty">getProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#159"><abbr title="Property::getNumero">getNumero</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#171"><abbr title="Property::setAdresse">setAdresse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#183"><abbr title="Property::getAdresse">getAdresse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#195"><abbr title="Property::setActif">setActif</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#207"><abbr title="Property::getActif">getActif</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#219"><abbr title="Property::setBailDuration">setBailDuration</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#231"><abbr title="Property::getBailDuration">getBailDuration</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#222"><abbr title="Owner::addEvent">addEvent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#200"><abbr title="Owner::removeProperty">removeProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#251"><abbr title="Property::setOwner">setOwner</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#84"><abbr title="Owner::setNom">setNom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#147"><abbr title="Message::getAuteur">getAuteur</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#159"><abbr title="Message::setEnabled">setEnabled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#171"><abbr title="Message::getEnabled">getEnabled</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#183"><abbr title="Message::setFlag">setFlag</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#195"><abbr title="Message::getFlag">getFlag</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#72"><abbr title="Owner::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#96"><abbr title="Owner::getNom">getNom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#188"><abbr title="Owner::addProperty">addProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#108"><abbr title="Owner::setPrenom">setPrenom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#120"><abbr title="Owner::getPrenom">getPrenom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#132"><abbr title="Owner::setPseudo">setPseudo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#144"><abbr title="Owner::getPseudo">getPseudo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#156"><abbr title="Owner::setEmail">setEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#168"><abbr title="Owner::getEmail">getEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Owner.php.html#175"><abbr title="Owner::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#238"><abbr title="Property::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#263"><abbr title="Property::getOwner">getOwner</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#123"><abbr title="Message::getDate">getDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Handler/BailHandler.php.html#10"><abbr title="BailHandler::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/OwnerType.php.html#14"><abbr title="OwnerType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/OwnerType.php.html#22"><abbr title="OwnerType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/OwnerType.php.html#32"><abbr title="OwnerType::getBlockPrefix">getBlockPrefix</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/TenantType.php.html#14"><abbr title="TenantType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/TenantType.php.html#22"><abbr title="TenantType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/TenantType.php.html#32"><abbr title="TenantType::getBlockPrefix">getBlockPrefix</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Handler/TenantHandler.php.html#21"><abbr title="TenantHandler::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/BailType.php.html#36"><abbr title="BailType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Handler/TenantHandler.php.html#34"><abbr title="TenantHandler::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Manager/BailManager.php.html#10"><abbr title="BailManager::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Manager/BailManager.php.html#15"><abbr title="BailManager::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Manager/GenericManager.php.html#11"><abbr title="GenericManager::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Manager/GenericManager.php.html#16"><abbr title="GenericManager::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Manager/TenantManager.php.html#16"><abbr title="TenantManager::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Manager/TenantManager.php.html#29"><abbr title="TenantManager::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/BailType.php.html#47"><abbr title="BailType::getBlockPrefix">getBlockPrefix</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Form/BailType.php.html#15"><abbr title="BailType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#275"><abbr title="Property::addDocument">addDocument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#80"><abbr title="Tenant::setNom">setNom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#287"><abbr title="Property::removeDocument">removeDocument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#297"><abbr title="Property::getDocument">getDocument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#309"><abbr title="Property::addBail">addBail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#321"><abbr title="Property::removeBail">removeBail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Property.php.html#331"><abbr title="Property::getBail">getBail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#68"><abbr title="Tenant::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#92"><abbr title="Tenant::getNom">getNom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#188"><abbr title="Tenant::getBail">getBail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#104"><abbr title="Tenant::setPrenom">setPrenom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#116"><abbr title="Tenant::getPrenom">getPrenom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#128"><abbr title="Tenant::setPseudo">setPseudo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#140"><abbr title="Tenant::getPseudo">getPseudo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#152"><abbr title="Tenant::setEmail">setEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#164"><abbr title="Tenant::getEmail">getEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Tenant.php.html#176"><abbr title="Tenant::setBail">setBail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#135"><abbr title="Message::setAuteur">setAuteur</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#111"><abbr title="Message::setDate">setDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/BailController.php.html#111"><abbr title="BailController::editAction">editAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#141"><abbr title="Bail::setMeuble">setMeuble</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BoBundle/DependencyInjection/WiseBoExtension.php.html#20"><abbr title="WiseBoExtension::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BoBundle/Tests/Controller/DefaultControllerTest.php.html#9"><abbr title="DefaultControllerTest::testIndex">testIndex</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/DependencyInjection/WiseCoreExtension.php.html#20"><abbr title="WiseCoreExtension::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#105"><abbr title="Bail::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#117"><abbr title="Bail::setLoyer">setLoyer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#129"><abbr title="Bail::getLoyer">getLoyer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#153"><abbr title="Bail::getMeuble">getMeuble</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/DataFixtures/ORM/LoadTenantData.php.html#24"><abbr title="LoadTenantData::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#165"><abbr title="Bail::setCaution">setCaution</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#177"><abbr title="Bail::getCaution">getCaution</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#189"><abbr title="Bail::setDateDebut">setDateDebut</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#201"><abbr title="Bail::getDateDebut">getDateDebut</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#213"><abbr title="Bail::setDateBailEnded">setDateBailEnded</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#225"><abbr title="Bail::getDateBailEnded">getDateBailEnded</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#237"><abbr title="Bail::setType">setType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/DependencyInjection/Configuration.php.html#18"><abbr title="Configuration::getConfigTreeBuilder">getConfigTreeBuilder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/DataFixtures/ORM/LoadPropertyData.php.html#24"><abbr title="LoadPropertyData::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#261"><abbr title="Bail::setActif">setActif</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#87"><abbr title="OwnerController::editAction">editAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/BailController.php.html#134"><abbr title="BailController::deleteAction">deleteAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Controller/DefaultController.php.html#9"><abbr title="DefaultController::indexAction">indexAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Controller/DefaultController.php.html#14"><abbr title="DefaultController::homepageAction">homepageAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#25"><abbr title="OwnerController::indexAction">indexAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#44"><abbr title="OwnerController::newAction">newAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#72"><abbr title="OwnerController::showAction">showAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#112"><abbr title="OwnerController::deleteAction">deleteAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/DataFixtures/ORM/LoadOwnerData.php.html#27"><abbr title="LoadOwnerData::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#133"><abbr title="OwnerController::createDeleteForm">createDeleteForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/TenantController.php.html#33"><abbr title="TenantController::indexAction">indexAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/TenantController.php.html#49"><abbr title="TenantController::newAction">newAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/TenantController.php.html#73"><abbr title="TenantController::showAction">showAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/TenantController.php.html#89"><abbr title="TenantController::editAction">editAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/Controller/TenantController.php.html#108"><abbr title="TenantController::deleteAction">deleteAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ApiBundle/DataFixtures/ORM/LoadBailData.php.html#24"><abbr title="LoadBailData::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#249"><abbr title="Bail::getType">getType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#273"><abbr title="Bail::getActif">getActif</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#99"><abbr title="Message::getContenu">getContenu</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/InterventionRequest.php.html#80"><abbr title="InterventionRequest::getType">getType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Document.php.html#149"><abbr title="Document::getProperty">getProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Event.php.html#42"><abbr title="Event::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Event.php.html#54"><abbr title="Event::setEnable">setEnable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Event.php.html#66"><abbr title="Event::getEnable">getEnable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/InterventionRequest.php.html#56"><abbr title="InterventionRequest::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/InterventionRequest.php.html#68"><abbr title="InterventionRequest::setType">setType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/InterventionRequest.php.html#92"><abbr title="InterventionRequest::setDescription">setDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Document.php.html#125"><abbr title="Document::getBail">getBail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/InterventionRequest.php.html#104"><abbr title="InterventionRequest::getDescription">getDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/InterventionRequest.php.html#116"><abbr title="InterventionRequest::setStatus">setStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/InterventionRequest.php.html#128"><abbr title="InterventionRequest::getStatus">getStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/InterventionRequest.php.html#140"><abbr title="InterventionRequest::setBail">setBail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/InterventionRequest.php.html#152"><abbr title="InterventionRequest::getBail">getBail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#75"><abbr title="Message::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Message.php.html#87"><abbr title="Message::setContenu">setContenu</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Document.php.html#137"><abbr title="Document::setProperty">setProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Document.php.html#113"><abbr title="Document::setBail">setBail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#285"><abbr title="Bail::setProperty">setProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#364"><abbr title="Bail::removeTenant">removeTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#297"><abbr title="Bail::getProperty">getProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#304"><abbr title="Bail::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#318"><abbr title="Bail::addDocument">addDocument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#330"><abbr title="Bail::removeDocument">removeDocument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#340"><abbr title="Bail::getDocument">getDocument</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#352"><abbr title="Bail::addTenant">addTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#374"><abbr title="Bail::getTenant">getTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Document.php.html#101"><abbr title="Document::getDescritption">getDescritption</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#386"><abbr title="Bail::addInterventionRequest">addInterventionRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#398"><abbr title="Bail::removeInterventionRequest">removeInterventionRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Bail.php.html#408"><abbr title="Bail::getInterventionRequest">getInterventionRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Document.php.html#53"><abbr title="Document::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Document.php.html#65"><abbr title="Document::setLibelle">setLibelle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Document.php.html#77"><abbr title="Document::getLibelle">getLibelle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Entity/Document.php.html#89"><abbr title="Document::setDescritption">setDescritption</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CoreBundle/Tests/WebTestCase.php.html#12"><abbr title="WebTestCase::loadFixtures">loadFixtures</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ApiBundle/Controller/BailController.php.html#66"><abbr title="BailController::newAction">newAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ApiBundle/Controller/BailController.php.html#111"><abbr title="BailController::editAction">editAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#44"><abbr title="OwnerController::newAction">newAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#87"><abbr title="OwnerController::editAction">editAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ApiBundle/Controller/OwnerController.php.html#112"><abbr title="OwnerController::deleteAction">deleteAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="ApiBundle/Controller/TenantController.php.html#49"><abbr title="TenantController::newAction">newAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="CoreBundle/Tests/WebTestCase.php.html#12"><abbr title="WebTestCase::loadFixtures">loadFixtures</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 5.2.2</a> using <a href="https://secure.php.net/" target="_top">PHP 7.0.22</a> with <a href="https://xdebug.org/">Xdebug 2.5.5</a> and <a href="https://phpunit.de/">PHPUnit 6.3.0</a> at Thu Sep 7 17:55:45 CEST 2017.</small>
+    </p>
+   </footer>
+  </div>
+  <script src=".js/jquery.min.js" type="text/javascript"></script>
+  <script src=".js/bootstrap.min.js" type="text/javascript"></script>
+  <script src=".js/holder.min.js" type="text/javascript"></script>
+  <script src=".js/d3.min.js" type="text/javascript"></script>
+  <script src=".js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([28,0,0,0,0,1,0,0,0,0,0,11], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([151,0,0,0,0,0,0,0,0,0,0,2], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[41.379310344828,9,"<a href=\"ApiBundle\/Controller\/BailController.php.html#24\">BailController<\/a>"],[0,2,"<a href=\"CoreBundle\/Controller\/DefaultController.php.html#7\">DefaultController<\/a>"],[0,12,"<a href=\"ApiBundle\/Controller\/OwnerController.php.html#18\">OwnerController<\/a>"],[0,7,"<a href=\"ApiBundle\/Controller\/TenantController.php.html#26\">TenantController<\/a>"],[0,1,"<a href=\"ApiBundle\/DataFixtures\/ORM\/LoadBailData.php.html#17\">LoadBailData<\/a>"],[0,1,"<a href=\"ApiBundle\/DataFixtures\/ORM\/LoadOwnerData.php.html#20\">LoadOwnerData<\/a>"],[0,1,"<a href=\"ApiBundle\/DataFixtures\/ORM\/LoadPropertyData.php.html#17\">LoadPropertyData<\/a>"],[0,1,"<a href=\"ApiBundle\/DataFixtures\/ORM\/LoadTenantData.php.html#17\">LoadTenantData<\/a>"],[100,0,"<a href=\"ApiBundle\/WiseApiBundle.php.html#7\">WiseApiBundle<\/a>"],[0,1,"<a href=\"CoreBundle\/DependencyInjection\/Configuration.php.html#13\">Configuration<\/a>"],[0,1,"<a href=\"BoBundle\/DependencyInjection\/WiseBoExtension.php.html#15\">WiseBoExtension<\/a>"],[0,1,"<a href=\"BoBundle\/Tests\/Controller\/DefaultControllerTest.php.html#7\">DefaultControllerTest<\/a>"],[100,0,"<a href=\"BoBundle\/WiseBoBundle.php.html#7\">WiseBoBundle<\/a>"],[0,1,"<a href=\"CoreBundle\/DependencyInjection\/WiseCoreExtension.php.html#15\">WiseCoreExtension<\/a>"],[0,27,"<a href=\"CoreBundle\/Entity\/Bail.php.html#15\">Bail<\/a>"],[0,9,"<a href=\"CoreBundle\/Entity\/Document.php.html#13\">Document<\/a>"],[0,3,"<a href=\"CoreBundle\/Entity\/Event.php.html#13\">Event<\/a>"],[0,9,"<a href=\"CoreBundle\/Entity\/InterventionRequest.php.html#13\">InterventionRequest<\/a>"],[0,11,"<a href=\"CoreBundle\/Entity\/Message.php.html#13\">Message<\/a>"],[0,16,"<a href=\"CoreBundle\/Entity\/Owner.php.html#13\">Owner<\/a>"],[0,22,"<a href=\"CoreBundle\/Entity\/Property.php.html#13\">Property<\/a>"],[0,11,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#14\">Tenant<\/a>"],[0,3,"<a href=\"CoreBundle\/Form\/BailType.php.html#10\">BailType<\/a>"],[0,3,"<a href=\"CoreBundle\/Form\/OwnerType.php.html#9\">OwnerType<\/a>"],[0,3,"<a href=\"CoreBundle\/Form\/TenantType.php.html#9\">TenantType<\/a>"],[0,1,"<a href=\"CoreBundle\/Handler\/BailHandler.php.html#8\">BailHandler<\/a>"],[0,2,"<a href=\"CoreBundle\/Handler\/TenantHandler.php.html#15\">TenantHandler<\/a>"],[0,2,"<a href=\"CoreBundle\/Manager\/BailManager.php.html#7\">BailManager<\/a>"],[0,2,"<a href=\"CoreBundle\/Manager\/GenericManager.php.html#7\">GenericManager<\/a>"],[0,2,"<a href=\"CoreBundle\/Manager\/TenantManager.php.html#11\">TenantManager<\/a>"],[100,0,"<a href=\"CoreBundle\/Repository\/BailRepository.php.html#11\">BailRepository<\/a>"],[100,0,"<a href=\"CoreBundle\/Repository\/DocumentRepository.php.html#11\">DocumentRepository<\/a>"],[100,0,"<a href=\"CoreBundle\/Repository\/InterventionRequestRepository.php.html#11\">InterventionRequestRepository<\/a>"],[100,0,"<a href=\"CoreBundle\/Repository\/MessageRepository.php.html#11\">MessageRepository<\/a>"],[100,0,"<a href=\"CoreBundle\/Repository\/OwnerRepository.php.html#11\">OwnerRepository<\/a>"],[100,0,"<a href=\"CoreBundle\/Repository\/PropertyRepository.php.html#11\">PropertyRepository<\/a>"],[100,0,"<a href=\"CoreBundle\/Repository\/TenantRepository.php.html#11\">TenantRepository<\/a>"],[100,0,"<a href=\"CoreBundle\/Tests\/Controller\/OwnerControllerTest.php.html#7\">OwnerControllerTest<\/a>"],[0,2,"<a href=\"CoreBundle\/Tests\/WebTestCase.php.html#10\">WebTestCase<\/a>"],[100,0,"<a href=\"CoreBundle\/WiseCoreBundle.php.html#7\">WiseCoreBundle<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"ApiBundle\/Controller\/BailController.php.html#41\">BailController::indexAction<\/a>"],[0,3,"<a href=\"ApiBundle\/Controller\/BailController.php.html#66\">BailController::newAction<\/a>"],[100,1,"<a href=\"ApiBundle\/Controller\/BailController.php.html#93\">BailController::showAction<\/a>"],[0,3,"<a href=\"ApiBundle\/Controller\/BailController.php.html#111\">BailController::editAction<\/a>"],[0,1,"<a href=\"ApiBundle\/Controller\/BailController.php.html#134\">BailController::deleteAction<\/a>"],[0,1,"<a href=\"CoreBundle\/Controller\/DefaultController.php.html#9\">DefaultController::indexAction<\/a>"],[0,1,"<a href=\"CoreBundle\/Controller\/DefaultController.php.html#14\">DefaultController::homepageAction<\/a>"],[0,1,"<a href=\"ApiBundle\/Controller\/OwnerController.php.html#25\">OwnerController::indexAction<\/a>"],[0,3,"<a href=\"ApiBundle\/Controller\/OwnerController.php.html#44\">OwnerController::newAction<\/a>"],[0,1,"<a href=\"ApiBundle\/Controller\/OwnerController.php.html#72\">OwnerController::showAction<\/a>"],[0,3,"<a href=\"ApiBundle\/Controller\/OwnerController.php.html#87\">OwnerController::editAction<\/a>"],[0,3,"<a href=\"ApiBundle\/Controller\/OwnerController.php.html#112\">OwnerController::deleteAction<\/a>"],[0,1,"<a href=\"ApiBundle\/Controller\/OwnerController.php.html#133\">OwnerController::createDeleteForm<\/a>"],[0,1,"<a href=\"ApiBundle\/Controller\/TenantController.php.html#33\">TenantController::indexAction<\/a>"],[0,3,"<a href=\"ApiBundle\/Controller\/TenantController.php.html#49\">TenantController::newAction<\/a>"],[0,1,"<a href=\"ApiBundle\/Controller\/TenantController.php.html#73\">TenantController::showAction<\/a>"],[0,1,"<a href=\"ApiBundle\/Controller\/TenantController.php.html#89\">TenantController::editAction<\/a>"],[0,1,"<a href=\"ApiBundle\/Controller\/TenantController.php.html#108\">TenantController::deleteAction<\/a>"],[0,1,"<a href=\"ApiBundle\/DataFixtures\/ORM\/LoadBailData.php.html#24\">LoadBailData::load<\/a>"],[0,1,"<a href=\"ApiBundle\/DataFixtures\/ORM\/LoadOwnerData.php.html#27\">LoadOwnerData::load<\/a>"],[0,1,"<a href=\"ApiBundle\/DataFixtures\/ORM\/LoadPropertyData.php.html#24\">LoadPropertyData::load<\/a>"],[0,1,"<a href=\"ApiBundle\/DataFixtures\/ORM\/LoadTenantData.php.html#24\">LoadTenantData::load<\/a>"],[0,1,"<a href=\"CoreBundle\/DependencyInjection\/Configuration.php.html#18\">Configuration::getConfigTreeBuilder<\/a>"],[0,1,"<a href=\"BoBundle\/DependencyInjection\/WiseBoExtension.php.html#20\">WiseBoExtension::load<\/a>"],[0,1,"<a href=\"BoBundle\/Tests\/Controller\/DefaultControllerTest.php.html#9\">DefaultControllerTest::testIndex<\/a>"],[0,1,"<a href=\"CoreBundle\/DependencyInjection\/WiseCoreExtension.php.html#20\">WiseCoreExtension::load<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#105\">Bail::getId<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#117\">Bail::setLoyer<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#129\">Bail::getLoyer<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#141\">Bail::setMeuble<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#153\">Bail::getMeuble<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#165\">Bail::setCaution<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#177\">Bail::getCaution<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#189\">Bail::setDateDebut<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#201\">Bail::getDateDebut<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#213\">Bail::setDateBailEnded<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#225\">Bail::getDateBailEnded<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#237\">Bail::setType<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#249\">Bail::getType<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#261\">Bail::setActif<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#273\">Bail::getActif<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#285\">Bail::setProperty<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#297\">Bail::getProperty<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#304\">Bail::__construct<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#318\">Bail::addDocument<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#330\">Bail::removeDocument<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#340\">Bail::getDocument<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#352\">Bail::addTenant<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#364\">Bail::removeTenant<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#374\">Bail::getTenant<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#386\">Bail::addInterventionRequest<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#398\">Bail::removeInterventionRequest<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Bail.php.html#408\">Bail::getInterventionRequest<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Document.php.html#53\">Document::getId<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Document.php.html#65\">Document::setLibelle<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Document.php.html#77\">Document::getLibelle<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Document.php.html#89\">Document::setDescritption<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Document.php.html#101\">Document::getDescritption<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Document.php.html#113\">Document::setBail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Document.php.html#125\">Document::getBail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Document.php.html#137\">Document::setProperty<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Document.php.html#149\">Document::getProperty<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Event.php.html#42\">Event::getId<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Event.php.html#54\">Event::setEnable<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Event.php.html#66\">Event::getEnable<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/InterventionRequest.php.html#56\">InterventionRequest::getId<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/InterventionRequest.php.html#68\">InterventionRequest::setType<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/InterventionRequest.php.html#80\">InterventionRequest::getType<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/InterventionRequest.php.html#92\">InterventionRequest::setDescription<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/InterventionRequest.php.html#104\">InterventionRequest::getDescription<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/InterventionRequest.php.html#116\">InterventionRequest::setStatus<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/InterventionRequest.php.html#128\">InterventionRequest::getStatus<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/InterventionRequest.php.html#140\">InterventionRequest::setBail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/InterventionRequest.php.html#152\">InterventionRequest::getBail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#75\">Message::getId<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#87\">Message::setContenu<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#99\">Message::getContenu<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#111\">Message::setDate<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#123\">Message::getDate<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#135\">Message::setAuteur<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#147\">Message::getAuteur<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#159\">Message::setEnabled<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#171\">Message::getEnabled<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#183\">Message::setFlag<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Message.php.html#195\">Message::getFlag<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#72\">Owner::getId<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#84\">Owner::setNom<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#96\">Owner::getNom<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#108\">Owner::setPrenom<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#120\">Owner::getPrenom<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#132\">Owner::setPseudo<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#144\">Owner::getPseudo<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#156\">Owner::setEmail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#168\">Owner::getEmail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#175\">Owner::__construct<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#188\">Owner::addProperty<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#200\">Owner::removeProperty<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#210\">Owner::getProperty<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#222\">Owner::addEvent<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#234\">Owner::removeEvent<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Owner.php.html#244\">Owner::getEvent<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#87\">Property::getId<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#99\">Property::setLibelle<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#111\">Property::getLibelle<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#123\">Property::setResidence<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#135\">Property::getResidence<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#147\">Property::setNumero<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#159\">Property::getNumero<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#171\">Property::setAdresse<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#183\">Property::getAdresse<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#195\">Property::setActif<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#207\">Property::getActif<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#219\">Property::setBailDuration<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#231\">Property::getBailDuration<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#238\">Property::__construct<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#251\">Property::setOwner<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#263\">Property::getOwner<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#275\">Property::addDocument<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#287\">Property::removeDocument<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#297\">Property::getDocument<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#309\">Property::addBail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#321\">Property::removeBail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Property.php.html#331\">Property::getBail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#68\">Tenant::getId<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#80\">Tenant::setNom<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#92\">Tenant::getNom<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#104\">Tenant::setPrenom<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#116\">Tenant::getPrenom<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#128\">Tenant::setPseudo<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#140\">Tenant::getPseudo<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#152\">Tenant::setEmail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#164\">Tenant::getEmail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#176\">Tenant::setBail<\/a>"],[0,1,"<a href=\"CoreBundle\/Entity\/Tenant.php.html#188\">Tenant::getBail<\/a>"],[0,1,"<a href=\"CoreBundle\/Form\/BailType.php.html#15\">BailType::buildForm<\/a>"],[0,1,"<a href=\"CoreBundle\/Form\/BailType.php.html#36\">BailType::configureOptions<\/a>"],[0,1,"<a href=\"CoreBundle\/Form\/BailType.php.html#47\">BailType::getBlockPrefix<\/a>"],[0,1,"<a href=\"CoreBundle\/Form\/OwnerType.php.html#14\">OwnerType::buildForm<\/a>"],[0,1,"<a href=\"CoreBundle\/Form\/OwnerType.php.html#22\">OwnerType::configureOptions<\/a>"],[0,1,"<a href=\"CoreBundle\/Form\/OwnerType.php.html#32\">OwnerType::getBlockPrefix<\/a>"],[0,1,"<a href=\"CoreBundle\/Form\/TenantType.php.html#14\">TenantType::buildForm<\/a>"],[0,1,"<a href=\"CoreBundle\/Form\/TenantType.php.html#22\">TenantType::configureOptions<\/a>"],[0,1,"<a href=\"CoreBundle\/Form\/TenantType.php.html#32\">TenantType::getBlockPrefix<\/a>"],[0,1,"<a href=\"CoreBundle\/Handler\/BailHandler.php.html#10\">BailHandler::handle<\/a>"],[0,1,"<a href=\"CoreBundle\/Handler\/TenantHandler.php.html#21\">TenantHandler::__construct<\/a>"],[0,1,"<a href=\"CoreBundle\/Handler\/TenantHandler.php.html#34\">TenantHandler::handle<\/a>"],[0,1,"<a href=\"CoreBundle\/Manager\/BailManager.php.html#10\">BailManager::save<\/a>"],[0,1,"<a href=\"CoreBundle\/Manager\/BailManager.php.html#15\">BailManager::__construct<\/a>"],[0,1,"<a href=\"CoreBundle\/Manager\/GenericManager.php.html#11\">GenericManager::__construct<\/a>"],[0,1,"<a href=\"CoreBundle\/Manager\/GenericManager.php.html#16\">GenericManager::save<\/a>"],[0,1,"<a href=\"CoreBundle\/Manager\/TenantManager.php.html#16\">TenantManager::__construct<\/a>"],[0,1,"<a href=\"CoreBundle\/Manager\/TenantManager.php.html#29\">TenantManager::save<\/a>"],[0,2,"<a href=\"CoreBundle\/Tests\/WebTestCase.php.html#12\">WebTestCase::loadFixtures<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

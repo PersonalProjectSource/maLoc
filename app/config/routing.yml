@@ -5,7 +5,7 @@ NelmioApiDocBundle:
 wise_api:
     resource: "@WiseApiBundle/Controller/"
     type:     rest
-    prefix:   /
+    prefix:   /api
 
 wise_bo:
     resource: "@WiseBoBundle/Resources/config/routing.xml"
@@ -13,7 +13,7 @@ wise_bo:
 
 wise_core:
     resource: "@WiseCoreBundle/Resources/config/routing.yml"
-    prefix:   /core
+    prefix:   /
 
 #app:
 #    resource: '@AppBundle/Controller/'

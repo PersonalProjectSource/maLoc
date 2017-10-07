@@ -9,8 +9,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        $cont = $this->container->get('ApiController');
-        $cont->test();
-        return $this->render('WiseBoBundle:Default:index.html.twig');
+        return $this->render('@WiseCore/Security/login.html.twig');
     }
 }

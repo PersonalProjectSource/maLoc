@@ -1,4 +1,41 @@
 services:
-#    wise_core.example:
-#        class: Wise\CoreBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    Wise\CoreBundle\Manager\TenantManager:
+        class: Wise\CoreBundle\Manager\TenantManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@Wise\CoreBundle\Repository\TenantRepository'
+
+    Wise\CoreBundle\Manager\BailManager:
+        class: Wise\CoreBundle\Manager\BailManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@Wise\CoreBundle\Repository\BailRepository'
+
+    Wise\CoreBundle\Handler\TenantHandler:
+        class: Wise\CoreBundle\Handler\TenantHandler
+        arguments:
+            - '@Wise\CoreBundle\Manager\TenantManager'
+            - '@form.factory'
+            - '@Wise\CoreBundle\Repository\TenantRepository'
+        public: true
+
+    Wise\CoreBundle\Handler\BailHandler:
+        class: Wise\CoreBundle\Handler\BailHandler
+        arguments:
+            - '@Wise\CoreBundle\Manager\BailManager'
+            - '@form.factory'
+            - '@Wise\CoreBundle\Repository\BailRepository'
+        public: true
+
+    Wise\CoreBundle\Repository\TenantRepository:
+        class: Wise\CoreBundle\Repository\TenantRepository
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments: ['Wise\CoreBundle\Entity\Tenant']
+        lazy: true
+
+    Wise\CoreBundle\Repository\BailRepository:
+        class: Wise\CoreBundle\Repository\BailRepository
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments: ['Wise\CoreBundle\Entity\Bail']
+        lazy: true
+

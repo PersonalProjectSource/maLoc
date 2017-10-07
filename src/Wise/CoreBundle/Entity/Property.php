@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="property")
  * @ORM\Entity(repositoryClass="Wise\CoreBundle\Repository\PropertyRepository")
  */
-class Property
+class Property implements UserInterface
 {
     /**
      * @var int
@@ -20,6 +20,21 @@ class Property
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Wise\CoreBundle\Entity\Owner", inversedBy="property")
+     */
+    private $owner;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Document", mappedBy="property", cascade={"persist"})
+     */
+    private $document;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Wise\CoreBundle\Entity\Bail", mappedBy="property", cascade={"persist"})
+     */
+    private $bail;
 
     /**
      * @var string
@@ -217,5 +232,104 @@ class Property
     {
         return $this->bailDuration;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->document = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->bail = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Set owner
+     *
+     * @param \Wise\CoreBundle\Entity\Owner $owner
+     *
+     * @return Property
+     */
+    public function setOwner(\Wise\CoreBundle\Entity\Owner $owner = null)
+    {
+        $this->owner = $owner;
+
+        return $this;
+    }
+
+    /**
+     * Get owner
+     *
+     * @return \Wise\CoreBundle\Entity\Owner
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    /**
+     * Add document
+     *
+     * @param \Wise\CoreBundle\Entity\Document $document
+     *
+     * @return Property
+     */
+    public function addDocument(\Wise\CoreBundle\Entity\Document $document)
+    {
+        $this->document[] = $document;
+
+        return $this;
+    }
+
+    /**
+     * Remove document
+     *
+     * @param \Wise\CoreBundle\Entity\Document $document
+     */
+    public function removeDocument(\Wise\CoreBundle\Entity\Document $document)
+    {
+        $this->document->removeElement($document);
+    }
+
+    /**
+     * Get document
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDocument()
+    {
+        return $this->document;
+    }
+
+    /**
+     * Add bail
+     *
+     * @param \Wise\CoreBundle\Entity\Bail $bail
+     *
+     * @return Property
+     */
+    public function addBail(\Wise\CoreBundle\Entity\Bail $bail)
+    {
+        $this->bail[] = $bail;
+
+        return $this;
+    }
+
+    /**
+     * Remove bail
+     *
+     * @param \Wise\CoreBundle\Entity\Bail $bail
+     */
+    public function removeBail(\Wise\CoreBundle\Entity\Bail $bail)
+    {
+        $this->bail->removeElement($bail);
+    }
+
+    /**
+     * Get bail
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBail()
+    {
+        return $this->bail;
+    }
+}
